@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { languages, ui } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "de" } },
+    { params: { lang: "it" } },
+    { params: { lang: "pt" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = ui[lang] || ui.es;
+---
+
+<Layout title={`uDefine - ${languages[lang]?.label || "Consulting"}`}>
+  <h1 class="text-4xl font-bold text-center mt-20 text-white">Services</h1>
+</Layout>

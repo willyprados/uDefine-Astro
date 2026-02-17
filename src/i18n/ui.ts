@@ -295,433 +295,435 @@ export const ui = {
       },
     },
   },
-  // ... (Puedes rellenar DE, IT, PT siguiendo el mismo patrón)
   de: {
-  nav: {
-    home: "Startseite",
-    about: "Über uns",
-    services: "Dienstleistungen",
-    contact: "Kontakt",
-  },
-  footer: {
-    description:
-      "Experten für SAP-Fiori-Entwicklung und strategische Beratung für das moderne digitale Unternehmen.",
-    headers: {
+    nav: {
+      home: "Startseite",
+      about: "Über uns",
       services: "Dienstleistungen",
-      company: "Unternehmen",
       contact: "Kontakt",
     },
-    servicesLinks: [
-      { label: "Fiori-Entwicklung", href: "/services" },
-      { label: "S/4HANA Migration", href: "/services" },
-      { label: "Systemintegration", href: "/services" },
-      { label: "UX-Strategie", href: "/services" },
-    ],
-    companyLinks: [
-      { label: "Über uns", href: "/about" },
-      { label: "Erfolgsgeschichten", href: "/#success-stories" },
-      { label: "Karriere", href: "/about#careers" },
-      { label: "Kontakt", href: "/contact" },
-    ],
-    contactInfo: {
-      address: "Avenida de Roma, 119,<br/>Barcelona, Katalonien 08011, ES",
-      email: "hello@udefine.net",
-      phone: "+34 (600) 123-4567",
+    footer: {
+      description:
+        "Experten für SAP-Fiori-Entwicklung und strategische Beratung für das moderne digitale Unternehmen.",
+      headers: {
+        services: "Dienstleistungen",
+        company: "Unternehmen",
+        contact: "Kontakt",
+      },
+      servicesLinks: [
+        { label: "Fiori-Entwicklung", href: "/services" },
+        { label: "S/4HANA Migration", href: "/services" },
+        { label: "Systemintegration", href: "/services" },
+        { label: "UX-Strategie", href: "/services" },
+      ],
+      companyLinks: [
+        { label: "Über uns", href: "/about" },
+        { label: "Erfolgsgeschichten", href: "/#success-stories" },
+        { label: "Karriere", href: "/about#careers" },
+        { label: "Kontakt", href: "/contact" },
+      ],
+      contactInfo: {
+        address: "Avenida de Roma, 119,<br/>Barcelona, Katalonien 08011, ES",
+        email: "hello@udefine.net",
+        phone: "+34 (600) 123-4567",
+      },
+      legal: {
+        copyright: "Alle Rechte vorbehalten.",
+        privacy: "Datenschutzrichtlinie",
+        terms: "Nutzungsbedingungen",
+      },
     },
-    legal: {
-      copyright: "Alle Rechte vorbehalten.",
-      privacy: "Datenschutzrichtlinie",
-      terms: "Nutzungsbedingungen",
+    home: {
+      hero: {
+        badge: "Premium SAP Beratung",
+        titlePre: "Neudefinition von",
+        titleHighlight: "SAP Exzellenz",
+        subtitle:
+          "Experten für Fiori-Entwicklung und strategische Beratung, die die Lücke zwischen komplexen Backends und großartigen Nutzererlebnissen schließen.",
+        cta: "Transformation starten",
+      },
+      about: {
+        subTitle: "Über uns",
+        title: "Logik und Erlebnis verbinden",
+        features: [
+          {
+            icon: "psychology",
+            title: "Designorientiertes Denken",
+            description: "Priorisierung der Endnutzererfahrung.",
+          },
+          {
+            icon: "terminal",
+            title: "Technische Meisterschaft",
+            description: "Tiefgehende Expertise in ABAP, Fiori, UI5.",
+          },
+        ],
+      },
+      expertise: {
+        subTitle: "Unsere Expertise",
+        title: "Spezialisierte Dienstleistungen",
+        services: [
+          {
+            icon: "palette",
+            title: "SAP Fiori Design",
+            description: "Intuitive UX/UI und individuelle Apps.",
+          },
+          {
+            icon: "lightbulb",
+            title: "Strategische Beratung",
+            description: "S/4HANA-Migrations-Roadmaps.",
+          },
+          {
+            icon: "hub",
+            title: "Systemintegration",
+            description: "Nahtlose Konnektivität.",
+          },
+        ],
+      },
+      caseStudies: {
+        subTitle: "Fallstudien",
+        title: "Transformation globaler Unternehmen",
+        studies: [
+          {
+            title: "Transformation eines globalen Einzelhändlers",
+            category: "Einzelhandel",
+            description:
+              "Individuelle Fiori-Apps reduzierten die Bearbeitungszeit um 40 %.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Fertigungseffizienz",
+            category: "Industrie",
+            description:
+              "Optimierte Berichterstattung der Produktionslinie mit einem einheitlichen Dashboard.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Logistik UX-Überarbeitung",
+            category: "Logistik",
+            description:
+              "Echtzeit-Inventarverfolgungssystem ersetzt Tabellenkalkulationen.",
+            image: "...",
+            link: "#",
+          },
+        ],
+      },
+      testimonials: {
+        subTitle: "Referenzen",
+        title: "Was unsere Kunden sagen",
+        items: [
+          {
+            quote:
+              "Die mit uDefine erreichte logistische Optimierung war bemerkenswert. Ihr Team sorgte für eine erfolgreiche Integration unserer unterschiedlichen Systeme.",
+            author: "Cervezas Alhambra",
+            role: "Strategischer Partner",
+            initials: "CA",
+          },
+          {
+            quote:
+              "Die Implementierung elektronischer Rechnungsstellung in Brasilien erfordert die Navigation durch ein hochkomplexes regulatorisches Umfeld. uDefine meisterte die Herausforderung mit Expertise.",
+            author: "Paulo",
+            role: "Finanzmanager, MedTech Brasil",
+            initials: "PM",
+          },
+        ],
+      },
+      cta: {
+        title: "Bereit, Ihren Workflow zu verbessern?",
+        subtitle:
+          "Schließen Sie sich zukunftsorientierten Unternehmen an, die ihre SAP-Erfahrung mit uDefine neu definiert haben.",
+        btnPrimary: "Kostenlose Beratung erhalten",
+        btnSecondary: "Vertrieb kontaktieren",
+      },
     },
   },
-  home: {
-    hero: {
-      badge: "Premium SAP Beratung",
-      titlePre: "Neudefinition von",
-      titleHighlight: "SAP Exzellenz",
-      subtitle:
-        "Experten für Fiori-Entwicklung und strategische Beratung, die die Lücke zwischen komplexen Backends und großartigen Nutzererlebnissen schließen.",
-      cta: "Transformation starten",
-    },
-    about: {
-      subTitle: "Über uns",
-      title: "Logik und Erlebnis verbinden",
-      features: [
-        {
-          icon: "psychology",
-          title: "Designorientiertes Denken",
-          description: "Priorisierung der Endnutzererfahrung.",
-        },
-        {
-          icon: "terminal",
-          title: "Technische Meisterschaft",
-          description: "Tiefgehende Expertise in ABAP, Fiori, UI5.",
-        },
-      ],
-    },
-    expertise: {
-      subTitle: "Unsere Expertise",
-      title: "Spezialisierte Dienstleistungen",
-      services: [
-        {
-          icon: "palette",
-          title: "SAP Fiori Design",
-          description: "Intuitive UX/UI und individuelle Apps.",
-        },
-        {
-          icon: "lightbulb",
-          title: "Strategische Beratung",
-          description: "S/4HANA-Migrations-Roadmaps.",
-        },
-        {
-          icon: "hub",
-          title: "Systemintegration",
-          description: "Nahtlose Konnektivität.",
-        },
-      ],
-    },
-    caseStudies: {
-      subTitle: "Fallstudien",
-      title: "Transformation globaler Unternehmen",
-      studies: [
-        {
-          title: "Transformation eines globalen Einzelhändlers",
-          category: "Einzelhandel",
-          description: "Individuelle Fiori-Apps reduzierten die Bearbeitungszeit um 40 %.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Fertigungseffizienz",
-          category: "Industrie",
-          description:
-            "Optimierte Berichterstattung der Produktionslinie mit einem einheitlichen Dashboard.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Logistik UX-Überarbeitung",
-          category: "Logistik",
-          description:
-            "Echtzeit-Inventarverfolgungssystem ersetzt Tabellenkalkulationen.",
-          image: "...",
-          link: "#",
-        },
-      ],
-    },
-    testimonials: {
-      subTitle: "Referenzen",
-      title: "Was unsere Kunden sagen",
-      items: [
-        {
-          quote:
-            "Die mit uDefine erreichte logistische Optimierung war bemerkenswert. Ihr Team sorgte für eine erfolgreiche Integration unserer unterschiedlichen Systeme.",
-          author: "Cervezas Alhambra",
-          role: "Strategischer Partner",
-          initials: "CA",
-        },
-        {
-          quote:
-            "Die Implementierung elektronischer Rechnungsstellung in Brasilien erfordert die Navigation durch ein hochkomplexes regulatorisches Umfeld. uDefine meisterte die Herausforderung mit Expertise.",
-          author: "Paulo",
-          role: "Finanzmanager, MedTech Brasil",
-          initials: "PM",
-        },
-      ],
-    },
-    cta: {
-      title: "Bereit, Ihren Workflow zu verbessern?",
-      subtitle:
-        "Schließen Sie sich zukunftsorientierten Unternehmen an, die ihre SAP-Erfahrung mit uDefine neu definiert haben.",
-      btnPrimary: "Kostenlose Beratung erhalten",
-      btnSecondary: "Vertrieb kontaktieren",
-    },
-  },
-},
 
-it: {
-  nav: {
-    home: "Home",
-    about: "Chi siamo",
-    services: "Servizi",
-    contact: "Contatto",
-  },
-  footer: {
-    description:
-      "Sviluppo SAP Fiori e consulenza strategica esperta per l'impresa digitale moderna.",
-    headers: {
+  it: {
+    nav: {
+      home: "Home",
+      about: "Chi siamo",
       services: "Servizi",
-      company: "Azienda",
       contact: "Contatto",
     },
-    servicesLinks: [
-      { label: "Sviluppo Fiori", href: "/services" },
-      { label: "Migrazione S/4HANA", href: "/services" },
-      { label: "Integrazione di sistema", href: "/services" },
-      { label: "Strategia UX", href: "/services" },
-    ],
-    companyLinks: [
-      { label: "Chi siamo", href: "/about" },
-      { label: "Casi di successo", href: "/#success-stories" },
-      { label: "Carriere", href: "/about#careers" },
-      { label: "Contatto", href: "/contact" },
-    ],
-    contactInfo: {
-      address: "Avenida de Roma, 119,<br/>Barcellona, Catalogna 08011, ES",
-      email: "hello@udefine.net",
-      phone: "+34 (600) 123-4567",
+    footer: {
+      description:
+        "Sviluppo SAP Fiori e consulenza strategica esperta per l'impresa digitale moderna.",
+      headers: {
+        services: "Servizi",
+        company: "Azienda",
+        contact: "Contatto",
+      },
+      servicesLinks: [
+        { label: "Sviluppo Fiori", href: "/services" },
+        { label: "Migrazione S/4HANA", href: "/services" },
+        { label: "Integrazione di sistema", href: "/services" },
+        { label: "Strategia UX", href: "/services" },
+      ],
+      companyLinks: [
+        { label: "Chi siamo", href: "/about" },
+        { label: "Casi di successo", href: "/#success-stories" },
+        { label: "Carriere", href: "/about#careers" },
+        { label: "Contatto", href: "/contact" },
+      ],
+      contactInfo: {
+        address: "Avenida de Roma, 119,<br/>Barcellona, Catalogna 08011, ES",
+        email: "hello@udefine.net",
+        phone: "+34 (600) 123-4567",
+      },
+      legal: {
+        copyright: "Tutti i diritti riservati.",
+        privacy: "Informativa sulla privacy",
+        terms: "Termini di servizio",
+      },
     },
-    legal: {
-      copyright: "Tutti i diritti riservati.",
-      privacy: "Informativa sulla privacy",
-      terms: "Termini di servizio",
+    home: {
+      hero: {
+        badge: "Consulenza SAP Premium",
+        titlePre: "Ridefinire",
+        titleHighlight: "l'Eccellenza SAP",
+        subtitle:
+          "Sviluppo Fiori esperto e consulenza strategica che colmano il divario tra backend complessi ed esperienze utente eccellenti.",
+        cta: "Avvia trasformazione",
+      },
+      about: {
+        subTitle: "Chi siamo",
+        title: "Collegare logica ed esperienza",
+        features: [
+          {
+            icon: "psychology",
+            title: "Pensiero guidato dal design",
+            description: "Priorità all’esperienza dell’utente finale.",
+          },
+          {
+            icon: "terminal",
+            title: "Maestria tecnica",
+            description: "Profonda competenza in ABAP, Fiori, UI5.",
+          },
+        ],
+      },
+      expertise: {
+        subTitle: "Le nostre competenze",
+        title: "Servizi specializzati",
+        services: [
+          {
+            icon: "palette",
+            title: "Design SAP Fiori",
+            description: "UX/UI intuitive e app personalizzate.",
+          },
+          {
+            icon: "lightbulb",
+            title: "Consulenza strategica",
+            description: "Roadmap di migrazione S/4HANA.",
+          },
+          {
+            icon: "hub",
+            title: "Integrazione di sistema",
+            description: "Connettività senza interruzioni.",
+          },
+        ],
+      },
+      caseStudies: {
+        subTitle: "Casi studio",
+        title: "Trasformare imprese globali",
+        studies: [
+          {
+            title: "Trasformazione di un retailer globale",
+            category: "Retail",
+            description:
+              "App Fiori personalizzate che riducono i tempi di elaborazione del 40%.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Efficienza produttiva",
+            category: "Industriale",
+            description:
+              "Reportistica della linea di produzione semplificata con dashboard unificata.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Revisione UX logistica",
+            category: "Logistica",
+            description:
+              "Sistema di monitoraggio inventario in tempo reale che sostituisce i fogli di calcolo.",
+            image: "...",
+            link: "#",
+          },
+        ],
+      },
+      testimonials: {
+        subTitle: "Testimonianze",
+        title: "Cosa dicono i nostri clienti",
+        items: [
+          {
+            quote:
+              "L’ottimizzazione logistica ottenuta con uDefine è stata notevole. Il loro team ha garantito un’integrazione di successo tra i nostri sistemi eterogenei.",
+            author: "Cervezas Alhambra",
+            role: "Partner strategico",
+            initials: "CA",
+          },
+          {
+            quote:
+              "Implementare la fatturazione elettronica in Brasile significa affrontare un ambiente normativo altamente complesso. uDefine ha gestito la sfida con competenza.",
+            author: "Paulo",
+            role: "Responsabile finanziario, MedTech Brasil",
+            initials: "PM",
+          },
+        ],
+      },
+      cta: {
+        title: "Pronto ad aggiornare il tuo flusso di lavoro?",
+        subtitle:
+          "Unisciti alle aziende innovative che hanno ridefinito la loro esperienza SAP con uDefine.",
+        btnPrimary: "Ottieni una consulenza gratuita",
+        btnSecondary: "Contatta vendite",
+      },
     },
   },
-  home: {
-    hero: {
-      badge: "Consulenza SAP Premium",
-      titlePre: "Ridefinire",
-      titleHighlight: "l'Eccellenza SAP",
-      subtitle:
-        "Sviluppo Fiori esperto e consulenza strategica che colmano il divario tra backend complessi ed esperienze utente eccellenti.",
-      cta: "Avvia trasformazione",
-    },
-    about: {
-      subTitle: "Chi siamo",
-      title: "Collegare logica ed esperienza",
-      features: [
-        {
-          icon: "psychology",
-          title: "Pensiero guidato dal design",
-          description: "Priorità all’esperienza dell’utente finale.",
-        },
-        {
-          icon: "terminal",
-          title: "Maestria tecnica",
-          description: "Profonda competenza in ABAP, Fiori, UI5.",
-        },
-      ],
-    },
-    expertise: {
-      subTitle: "Le nostre competenze",
-      title: "Servizi specializzati",
-      services: [
-        {
-          icon: "palette",
-          title: "Design SAP Fiori",
-          description: "UX/UI intuitive e app personalizzate.",
-        },
-        {
-          icon: "lightbulb",
-          title: "Consulenza strategica",
-          description: "Roadmap di migrazione S/4HANA.",
-        },
-        {
-          icon: "hub",
-          title: "Integrazione di sistema",
-          description: "Connettività senza interruzioni.",
-        },
-      ],
-    },
-    caseStudies: {
-      subTitle: "Casi studio",
-      title: "Trasformare imprese globali",
-      studies: [
-        {
-          title: "Trasformazione di un retailer globale",
-          category: "Retail",
-          description: "App Fiori personalizzate che riducono i tempi di elaborazione del 40%.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Efficienza produttiva",
-          category: "Industriale",
-          description:
-            "Reportistica della linea di produzione semplificata con dashboard unificata.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Revisione UX logistica",
-          category: "Logistica",
-          description:
-            "Sistema di monitoraggio inventario in tempo reale che sostituisce i fogli di calcolo.",
-          image: "...",
-          link: "#",
-        },
-      ],
-    },
-    testimonials: {
-      subTitle: "Testimonianze",
-      title: "Cosa dicono i nostri clienti",
-      items: [
-        {
-          quote:
-            "L’ottimizzazione logistica ottenuta con uDefine è stata notevole. Il loro team ha garantito un’integrazione di successo tra i nostri sistemi eterogenei.",
-          author: "Cervezas Alhambra",
-          role: "Partner strategico",
-          initials: "CA",
-        },
-        {
-          quote:
-            "Implementare la fatturazione elettronica in Brasile significa affrontare un ambiente normativo altamente complesso. uDefine ha gestito la sfida con competenza.",
-          author: "Paulo",
-          role: "Responsabile finanziario, MedTech Brasil",
-          initials: "PM",
-        },
-      ],
-    },
-    cta: {
-      title: "Pronto ad aggiornare il tuo flusso di lavoro?",
-      subtitle:
-        "Unisciti alle aziende innovative che hanno ridefinito la loro esperienza SAP con uDefine.",
-      btnPrimary: "Ottieni una consulenza gratuita",
-      btnSecondary: "Contatta vendite",
-    },
-  },
-},
 
-pt: {
-  nav: {
-    home: "Início",
-    about: "Sobre",
-    services: "Serviços",
-    contact: "Contato",
-  },
-  footer: {
-    description:
-      "Desenvolvimento SAP Fiori especializado e consultoria estratégica para a empresa digital moderna.",
-    headers: {
+  pt: {
+    nav: {
+      home: "Início",
+      about: "Sobre",
       services: "Serviços",
-      company: "Empresa",
       contact: "Contato",
     },
-    servicesLinks: [
-      { label: "Desenvolvimento Fiori", href: "/services" },
-      { label: "Migração S/4HANA", href: "/services" },
-      { label: "Integração de sistemas", href: "/services" },
-      { label: "Estratégia UX", href: "/services" },
-    ],
-    companyLinks: [
-      { label: "Sobre nós", href: "/about" },
-      { label: "Casos de sucesso", href: "/#success-stories" },
-      { label: "Carreiras", href: "/about#careers" },
-      { label: "Contato", href: "/contact" },
-    ],
-    contactInfo: {
-      address: "Avenida de Roma, 119,<br/>Barcelona, Catalunha 08011, ES",
-      email: "hello@udefine.net",
-      phone: "+34 (600) 123-4567",
+    footer: {
+      description:
+        "Desenvolvimento SAP Fiori especializado e consultoria estratégica para a empresa digital moderna.",
+      headers: {
+        services: "Serviços",
+        company: "Empresa",
+        contact: "Contato",
+      },
+      servicesLinks: [
+        { label: "Desenvolvimento Fiori", href: "/services" },
+        { label: "Migração S/4HANA", href: "/services" },
+        { label: "Integração de sistemas", href: "/services" },
+        { label: "Estratégia UX", href: "/services" },
+      ],
+      companyLinks: [
+        { label: "Sobre nós", href: "/about" },
+        { label: "Casos de sucesso", href: "/#success-stories" },
+        { label: "Carreiras", href: "/about#careers" },
+        { label: "Contato", href: "/contact" },
+      ],
+      contactInfo: {
+        address: "Avenida de Roma, 119,<br/>Barcelona, Catalunha 08011, ES",
+        email: "hello@udefine.net",
+        phone: "+34 (600) 123-4567",
+      },
+      legal: {
+        copyright: "Todos os direitos reservados.",
+        privacy: "Política de privacidade",
+        terms: "Termos de serviço",
+      },
     },
-    legal: {
-      copyright: "Todos os direitos reservados.",
-      privacy: "Política de privacidade",
-      terms: "Termos de serviço",
+    home: {
+      hero: {
+        badge: "Consultoria SAP Premium",
+        titlePre: "Redefinindo",
+        titleHighlight: "Excelência SAP",
+        subtitle:
+          "Desenvolvimento Fiori especializado e consultoria estratégica conectando backends complexos a belas experiências de usuário.",
+        cta: "Iniciar transformação",
+      },
+      about: {
+        subTitle: "Sobre nós",
+        title: "Conectando lógica e experiência",
+        features: [
+          {
+            icon: "psychology",
+            title: "Pensamento guiado por design",
+            description: "Priorizando a experiência do usuário final.",
+          },
+          {
+            icon: "terminal",
+            title: "Domínio técnico",
+            description: "Profunda expertise em ABAP, Fiori, UI5.",
+          },
+        ],
+      },
+      expertise: {
+        subTitle: "Nossa expertise",
+        title: "Serviços especializados",
+        services: [
+          {
+            icon: "palette",
+            title: "Design SAP Fiori",
+            description: "UX/UI intuitivas e apps personalizados.",
+          },
+          {
+            icon: "lightbulb",
+            title: "Consultoria estratégica",
+            description: "Roadmaps de migração S/4HANA.",
+          },
+          {
+            icon: "hub",
+            title: "Integração de sistemas",
+            description: "Conectividade perfeita.",
+          },
+        ],
+      },
+      caseStudies: {
+        subTitle: "Estudos de caso",
+        title: "Transformando empresas globais",
+        studies: [
+          {
+            title: "Transformação de varejista global",
+            category: "Varejo",
+            description:
+              "Apps Fiori personalizados reduzindo o tempo de processamento em 40%.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Eficiência de manufatura",
+            category: "Industrial",
+            description:
+              "Relatórios de linha de produção otimizados com dashboard unificado.",
+            image: "...",
+            link: "#",
+          },
+          {
+            title: "Reformulação UX logística",
+            category: "Logística",
+            description:
+              "Sistema de rastreamento de inventário em tempo real substituindo planilhas.",
+            image: "...",
+            link: "#",
+          },
+        ],
+      },
+      testimonials: {
+        subTitle: "Depoimentos",
+        title: "O que nossos clientes dizem",
+        items: [
+          {
+            quote:
+              "A otimização logística alcançada com a uDefine foi notável. A equipe garantiu uma integração bem-sucedida entre nossos sistemas distintos.",
+            author: "Cervezas Alhambra",
+            role: "Parceiro estratégico",
+            initials: "CA",
+          },
+          {
+            quote:
+              "Implementar faturamento eletrônico no Brasil envolve um ambiente regulatório altamente complexo. A uDefine lidou com o desafio com expertise.",
+            author: "Paulo",
+            role: "Gerente financeiro, MedTech Brasil",
+            initials: "PM",
+          },
+        ],
+      },
+      cta: {
+        title: "Pronto para melhorar seu fluxo de trabalho?",
+        subtitle:
+          "Junte-se às empresas inovadoras que redefiniram sua experiência SAP com a uDefine.",
+        btnPrimary: "Obter consulta gratuita",
+        btnSecondary: "Falar com vendas",
+      },
     },
   },
-  home: {
-    hero: {
-      badge: "Consultoria SAP Premium",
-      titlePre: "Redefinindo",
-      titleHighlight: "Excelência SAP",
-      subtitle:
-        "Desenvolvimento Fiori especializado e consultoria estratégica conectando backends complexos a belas experiências de usuário.",
-      cta: "Iniciar transformação",
-    },
-    about: {
-      subTitle: "Sobre nós",
-      title: "Conectando lógica e experiência",
-      features: [
-        {
-          icon: "psychology",
-          title: "Pensamento guiado por design",
-          description: "Priorizando a experiência do usuário final.",
-        },
-        {
-          icon: "terminal",
-          title: "Domínio técnico",
-          description: "Profunda expertise em ABAP, Fiori, UI5.",
-        },
-      ],
-    },
-    expertise: {
-      subTitle: "Nossa expertise",
-      title: "Serviços especializados",
-      services: [
-        {
-          icon: "palette",
-          title: "Design SAP Fiori",
-          description: "UX/UI intuitivas e apps personalizados.",
-        },
-        {
-          icon: "lightbulb",
-          title: "Consultoria estratégica",
-          description: "Roadmaps de migração S/4HANA.",
-        },
-        {
-          icon: "hub",
-          title: "Integração de sistemas",
-          description: "Conectividade perfeita.",
-        },
-      ],
-    },
-    caseStudies: {
-      subTitle: "Estudos de caso",
-      title: "Transformando empresas globais",
-      studies: [
-        {
-          title: "Transformação de varejista global",
-          category: "Varejo",
-          description: "Apps Fiori personalizados reduzindo o tempo de processamento em 40%.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Eficiência de manufatura",
-          category: "Industrial",
-          description:
-            "Relatórios de linha de produção otimizados com dashboard unificado.",
-          image: "...",
-          link: "#",
-        },
-        {
-          title: "Reformulação UX logística",
-          category: "Logística",
-          description:
-            "Sistema de rastreamento de inventário em tempo real substituindo planilhas.",
-          image: "...",
-          link: "#",
-        },
-      ],
-    },
-    testimonials: {
-      subTitle: "Depoimentos",
-      title: "O que nossos clientes dizem",
-      items: [
-        {
-          quote:
-            "A otimização logística alcançada com a uDefine foi notável. A equipe garantiu uma integração bem-sucedida entre nossos sistemas distintos.",
-          author: "Cervezas Alhambra",
-          role: "Parceiro estratégico",
-          initials: "CA",
-        },
-        {
-          quote:
-            "Implementar faturamento eletrônico no Brasil envolve um ambiente regulatório altamente complexo. A uDefine lidou com o desafio com expertise.",
-          author: "Paulo",
-          role: "Gerente financeiro, MedTech Brasil",
-          initials: "PM",
-        },
-      ],
-    },
-    cta: {
-      title: "Pronto para melhorar seu fluxo de trabalho?",
-      subtitle:
-        "Junte-se às empresas inovadoras que redefiniram sua experiência SAP com a uDefine.",
-      btnPrimary: "Obter consulta gratuita",
-      btnSecondary: "Falar com vendas",
-    },
-  },
-},
 } as const;
