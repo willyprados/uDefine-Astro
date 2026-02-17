@@ -1,0 +1,144 @@
+---
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface FooterContent {
+  description: string;
+  headers: {
+    services: string;
+    company: string;
+    contact: string;
+  };
+  servicesLinks: Link[];
+  companyLinks: Link[];
+  legal: {
+    privacy: string;
+    terms: string;
+    copyright: string;
+  };
+  contactInfo: {
+    address: string;
+    email: string;
+    phone: string;
+  };
+}
+
+interface Props {
+  lang: string;
+  content: FooterContent;
+}
+
+const { lang, content } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="bg-[#05080c] border-t border-white/5 pt-16 pb-8 px-4 lg:px-10 text-white"
+>
+  <div class="layout-container mx-auto max-w-[1280px]">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg font-bold">uDefine</h2>
+        </div>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          {content.description}
+        </p>
+        <div class="flex gap-4 mt-2">
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="text-sm font-medium">LinkedIn</span>
+          </a>
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="text-sm font-medium">Twitter</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-4">{content.headers.services}</h3>
+        <ul class="flex flex-col gap-2 text-sm text-slate-400">
+          {
+            content.servicesLinks.map((link) => (
+              <li>
+                <a
+                  class="hover:text-primary transition-colors"
+                  href={`/${lang}${link.href}`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-4">{content.headers.company}</h3>
+        <ul class="flex flex-col gap-2 text-sm text-slate-400">
+          {
+            content.companyLinks.map((link) => (
+              <li>
+                <a
+                  class="hover:text-primary transition-colors"
+                  href={`/${lang}${link.href}`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold mb-4">{content.headers.contact}</h3>
+        <ul class="flex flex-col gap-3 text-sm text-slate-400">
+          <li class="flex items-start gap-2">
+            <span
+              class="material-symbols-outlined text-primary text-base mt-0.5"
+              >location_on</span
+            >
+            <span set:html={content.contactInfo.address} />
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base"
+              >email</span
+            >
+            <a
+              href={`mailto:${content.contactInfo.email}`}
+              class="hover:text-white transition-colors"
+            >
+              {content.contactInfo.email}
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base"
+              >call</span
+            >
+            <span>{content.contactInfo.phone}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
+      <p class="text-slate-600 text-sm">
+        © {currentYear} uDefine Consulting. {content.legal.copyright}
+      </p>
+      <div class="flex gap-6 text-sm text-slate-600">
+        <a class="hover:text-slate-400" href="#">{content.legal.privacy}</a>
+        <a class="hover:text-slate-400" href="#">{content.legal.terms}</a>
+      </div>
+    </div>
+  </div>
+</footer>

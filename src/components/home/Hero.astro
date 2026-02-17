@@ -1,0 +1,111 @@
+---
+interface Props {
+  badge?: string;
+  titlePre?: string; // La parte blanca del título
+  titleHighlight?: string; // La parte con gradiente
+  subtitle?: string;
+  backgroundImage?: string;
+}
+
+const {
+  badge = "Premium SAP Consulting",
+  titlePre = "Redefining",
+  titleHighlight = "SAP Excellence",
+  subtitle = "Expert Fiori Development & Strategic Consulting bridging the gap between complex backends and beautiful user experiences.",
+  // Imagen de stock tecnológica (azul oscuro/redes) como fallback
+  backgroundImage = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+} = Astro.props;
+---
+
+<section
+  class="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 py-20"
+>
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#111822]/30 via-[#111822]/80 to-[#0b1016] z-10"
+    >
+    </div>
+
+    <div
+      class="h-full w-full bg-cover bg-center transition-transform duration-1000 hover:scale-105"
+      role="img"
+      aria-label="Abstract glowing digital network"
+      style={`background-image: url('${backgroundImage}');`}
+    >
+    </div>
+  </div>
+
+  <div
+    class="layout-content-container relative z-20 flex max-w-[960px] flex-col items-center gap-8 text-center hero-animation"
+  >
+    <div
+      class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm"
+    >
+      <span class="relative flex h-2 w-2">
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+        ></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+        ></span>
+      </span>
+      <span class="text-xs font-medium text-primary uppercase tracking-wider">
+        {badge}
+      </span>
+    </div>
+
+    <h1
+      class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl"
+    >
+      {titlePre}
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary"
+      >
+        {titleHighlight}
+      </span>
+    </h1>
+
+    <h2
+      class="max-w-[700px] text-slate-300 text-lg md:text-xl font-normal leading-relaxed"
+    >
+      {subtitle}
+    </h2>
+
+    <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+      <button
+        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold shadow-[0_0_25px_rgba(19,109,236,0.5)] hover:shadow-[0_0_40px_rgba(19,109,236,0.7)] transition-all duration-300 transform hover:-translate-y-1"
+      >
+        Start Your Transformation
+      </button>
+      <button
+        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-[#1a2332] hover:bg-[#233348] border border-white/10 text-white text-base font-bold transition-all duration-300"
+      >
+        View Success Stories
+      </button>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 animate-bounce text-white/30">
+    <span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
+  </div>
+</section>
+
+<style>
+  /* Animación de entrada personalizada 
+    (Reemplaza a las clases de plugins externos como 'animate-in')
+  */
+  .hero-animation {
+    animation: fade-in-up 1s ease-out forwards;
+    opacity: 0; /* Comienza invisible */
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

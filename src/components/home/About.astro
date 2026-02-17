@@ -1,0 +1,77 @@
+---
+const features = [
+  {
+    icon: "psychology",
+    title: "Design-Led Thinking",
+    description:
+      "We prioritize the end-user experience in every SAP solution we build. By focusing on intuitive workflows, we reduce training time and increase user adoption across the enterprise.",
+  },
+  {
+    icon: "terminal",
+    title: "Technical Mastery",
+    description:
+      "Our team possesses deep expertise in ABAP, Fiori, UI5, and SAP Cloud Platform. We don't just design pretty screens; we engineer robust, scalable architectures.",
+  },
+];
+
+// URL de imagen de respaldo (la original de google no funcionaba)
+const imageSrc =
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop";
+---
+
+<section class="py-20 px-4 lg:px-40 bg-background-dark">
+  <div
+    class="layout-content-container mx-auto flex max-w-[1100px] flex-col gap-16"
+  >
+    <div class="flex flex-col gap-4 text-center items-center">
+      <h2 class="text-primary text-sm font-bold uppercase tracking-widest">
+        About Us
+      </h2>
+      <h1 class="text-white text-3xl md:text-4xl font-bold max-w-[720px]">
+        Bridging the Gap Between Logic and Experience
+      </h1>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div
+        class="relative group rounded-xl overflow-hidden border border-white/10 shadow-2xl"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+        >
+        </div>
+        <div
+          class="w-full aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+          role="img"
+          aria-label="Team of developers working"
+          style={`background-image: url('${imageSrc}');`}
+        >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        {
+          features.map((feature, index) => (
+            <>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="material-symbols-outlined text-primary text-3xl">
+                    {feature.icon}
+                  </span>
+                  <h3 class="text-white text-xl font-bold">{feature.title}</h3>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+              {/* Divisor solo entre elementos, no al final */}
+              {index !== features.length - 1 && (
+                <div class="w-full h-px bg-white/5" />
+              )}
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

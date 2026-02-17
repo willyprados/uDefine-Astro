@@ -1,0 +1,69 @@
+---
+// 1. IMPORTANTE: Importamos 'ui' y 'languages' desde la carpeta i18n
+// La ruta '../../i18n/ui' asume que este archivo está en src/pages/[lang]/index.astro
+import { languages, ui } from "../../i18n/ui";
+
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/home/Hero.astro";
+import About from "../../components/home/About.astro";
+import Expertise from "../../components/home/Expertise.astro";
+import CaseStudies from "../../components/home/CaseStudies.astro";
+import Testimonials from "../../components/home/Testimonials.astro";
+import Ready from "../../components/home/Ready.astro";
+// 2. Generamos las rutas estáticas para cada idioma
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "de" } },
+    { params: { lang: "it" } },
+    { params: { lang: "pt" } },
+  ];
+}
+
+// 3. Obtenemos el parámetro de la URL
+const { lang } = Astro.params;
+// 4. Seleccionamos las traducciones según el idioma
+// Si el idioma no existe en ui, usamos español ('es') por defecto para evitar errores
+const t = ui[lang] || ui.es;
+const homeT = t.home;
+---
+
+<Layout title={`uDefine - ${languages[lang]?.label || "Consulting"}`}>
+  <main>
+    <Hero
+      badge={homeT.hero.badge}
+      titlePre={homeT.hero.titlePre}
+      titleHighlight={homeT.hero.titleHighlight}
+      subtitle={homeT.hero.subtitle}
+    />
+
+    <About
+      subTitle={homeT.about.subTitle}
+      title={homeT.about.title}
+      features={homeT.about.features}
+    />
+
+    <Expertise
+      subTitle={homeT.expertise.subTitle}
+      title={homeT.expertise.title}
+      services={homeT.expertise.services}
+    />
+    <CaseStudies
+      subTitle={homeT.caseStudies.subTitle}
+      title={homeT.caseStudies.title}
+      studies={homeT.caseStudies.studies}
+    />
+    <Testimonials
+      subTitle={homeT.testimonials.subTitle}
+      title={homeT.testimonials.title}
+      testimonials={homeT.testimonials.items}
+    />
+    <Ready
+      title={homeT.cta.title}
+      subtitle={homeT.cta.subtitle}
+      btnPrimary={homeT.cta.btnPrimary}
+      btnSecondary={homeT.cta.btnSecondary}
+    />
+  </main>
+</Layout>

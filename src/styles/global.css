@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. TUS COLORES DE MARCA (Estáticos) */
+  --color-primary: #136dec;
+
+  /* Renombramos estos internamente para usarlos como referencias */
+  --color-base-dark: #0b1016;
+  --color-base-light: #f6f7f8;
+  --color-card-dark: #151e29;
+
+  /* 2. VARIABLES SEMÁNTICAS (Las que usarás en el HTML) */
+  /* Estas clases cambiarán automáticamente según el tema */
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-base: var(--border-base);
+}
+
+/* 3. CONFIGURACIÓN MODO CLARO (Default) */
+:root {
+  /* Fondo claro (usamos tu color base light) */
+  --bg-main: var(--color-base-light);
+  /* Tarjetas blancas en modo claro */
+  --bg-card: #ffffff;
+  /* Texto oscuro (usamos tu color dark como texto principal) */
+  --text-main: var(--color-base-dark);
+  /* Texto secundario gris */
+  --text-muted: #475569;
+  /* Bordes sutiles */
+  --border-base: rgba(0, 0, 0, 0.1);
+}
+
+/* 4. CONFIGURACIÓN MODO OSCURO */
+.dark {
+  /* Fondo oscuro (usamos tu color base dark) */
+  --bg-main: var(--color-base-dark);
+  /* Tarjetas oscuras (usamos tu color card) */
+  --bg-card: var(--color-card-dark);
+  /* Texto blanco */
+  --text-main: #ffffff;
+  /* Texto secundario más claro */
+  --text-muted: #94a3b8;
+  /* Bordes blancos muy sutiles */
+  --border-base: rgba(255, 255, 255, 0.1);
+}
+
+/* Transición suave global */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}

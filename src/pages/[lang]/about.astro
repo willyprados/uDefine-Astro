@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+// src/pages/[lang]/services.astro
+import { languages, ui } from "../../i18n/ui";
+
+// 1. OBLIGATORIO: Generar las rutas para esta página también
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "de" } },
+    { params: { lang: "it" } },
+    { params: { lang: "pt" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = ui[lang] || ui.es; // Cargar traducciones
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title={`uDefine - ${languages[lang]?.label || "Consulting"}`}>
+  <h1 class="text-4xl font-bold text-center mt-20 text-white">About Us</h1>
+</Layout>
