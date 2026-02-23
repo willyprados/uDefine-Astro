@@ -1,0 +1,143 @@
+---
+const pathname = Astro.url.pathname;
+const languages = [
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
+  { code: "pt", label: "Português", flag: "🇵🇹" },
+];
+
+// MEJORA 1: Detectar el idioma desde la URL directamente si Astro.currentLocale falla
+const firstSegment = pathname.split("/")[1];
+const supportedLocales = languages.map((l) => l.code);
+const activeLocale =
+  Astro.currentLocale ||
+  (supportedLocales.includes(firstSegment) ? firstSegment : "en");
+
+const currentLang =
+  languages.find((lang) => lang.code === activeLocale) || languages[0];
+
+const getPathForLocale = (targetLocale: string) => {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length > 0 && supportedLocales.includes(segments[0])) {
+    segments[0] = targetLocale;
+  } else {
+    segments.unshift(targetLocale);
+  }
+  return `/${segments.join("/")}`;
+};
+---
+
+<div class="relative inline-block text-left" id="language-selector">
+  <button
+    id="dropdown-button"
+    class="flex items-center gap-2 px-3 py-2 bg-slate-900 text-slate-200 rounded-md hover:bg-slate-800 transition-colors border border-transparent focus:border-slate-700 focus:outline-none"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span id="active-flag" class="text-lg">{currentLang.flag}</span>
+
+    <svg
+      class="w-4 h-4 text-slate-400"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div
+    id="dropdown-menu"
+    class="hidden absolute right-0 mt-2 w-48 bg-[#1e2330] rounded-lg shadow-xl z-50 border border-slate-700/50 py-2"
+  >
+    <ul role="menu">
+      {
+        languages.map((lang) => (
+          <li role="menuitem">
+            <a
+              href={getPathForLocale(lang.code)}
+              data-flag={lang.flag}
+              class={`lang-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-slate-700/50 transition-colors ${
+                activeLocale === lang.code
+                  ? "text-blue-500 bg-slate-800/30"
+                  : "text-slate-300"
+              }`}
+            >
+              <span class="text-lg">{lang.flag}</span>
+              <span class="flex-1">{lang.label}</span>
+
+              {activeLocale === lang.code && (
+                <svg
+                  class="w-4 h-4 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  const setupDropdown = () => {
+    const button = document.getElementById("dropdown-button");
+    const menu = document.getElementById("dropdown-menu");
+    const activeFlag = document.getElementById("active-flag");
+    const langOptions = document.querySelectorAll(".lang-option");
+
+    if (!button || !menu) return;
+
+    // Abrir/Cerrar menú
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("hidden");
+      const isExpanded = !menu.classList.contains("hidden");
+      button.setAttribute("aria-expanded", isExpanded.toString());
+    });
+
+    // MEJORA 2: Cambiar la bandera instantáneamente al hacer clic
+    langOptions.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        // Obtenemos la bandera del atributo data-flag que pusimos en el HTML
+        const newFlag = (e.currentTarget as HTMLElement).getAttribute(
+          "data-flag",
+        );
+        if (activeFlag && newFlag) {
+          activeFlag.textContent = newFlag; // Cambiamos la bandera visualmente al instante
+        }
+        menu.classList.add("hidden"); // Cerramos el menú
+      });
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", (event) => {
+      if (
+        !button.contains(event.target as Node) &&
+        !menu.contains(event.target as Node)
+      ) {
+        menu.classList.add("hidden");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
+  setupDropdown();
+  document.addEventListener("astro:page-load", setupDropdown);
+</script>

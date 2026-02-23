@@ -13,9 +13,11 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const t = ui[lang] || ui.es;
+//const t = ui[lang as keyof typeof ui] || ui.es;
 ---
 
-<Layout title={`uDefine - ${languages[lang]?.label || "Consulting"}`}>
+<Layout
+  title={`uDefine - ${languages[lang as keyof typeof languages]?.label || "Consulting"}`}
+>
   <h1 class="text-4xl font-bold text-center mt-20 text-white">Contact Us</h1>
 </Layout>

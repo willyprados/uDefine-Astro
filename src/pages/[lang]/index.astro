@@ -10,7 +10,7 @@ import Expertise from "../../components/home/Expertise.astro";
 import CaseStudies from "../../components/home/CaseStudies.astro";
 import Testimonials from "../../components/home/Testimonials.astro";
 import Ready from "../../components/home/Ready.astro";
-// 2. Generamos las rutas estáticas para cada idioma
+
 export function getStaticPaths() {
   return [
     { params: { lang: "en" } },
@@ -21,15 +21,16 @@ export function getStaticPaths() {
   ];
 }
 
-// 3. Obtenemos el parámetro de la URL
 const { lang } = Astro.params;
 // 4. Seleccionamos las traducciones según el idioma
 // Si el idioma no existe en ui, usamos español ('es') por defecto para evitar errores
-const t = ui[lang] || ui.es;
+const t = ui[lang as keyof typeof ui] || ui.es;
 const homeT = t.home;
 ---
 
-<Layout title={`uDefine - ${languages[lang]?.label || "Consulting"}`}>
+<Layout
+  title={`uDefine - ${languages[lang as keyof typeof languages]?.label || "Consulting"}`}
+>
   <main>
     <Hero
       badge={homeT.hero.badge}

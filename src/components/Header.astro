@@ -1,5 +1,7 @@
 ---
 import { languages } from "../i18n/ui";
+import Picker from "./Picker.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 
 interface Props {
   lang: keyof typeof languages;
@@ -63,48 +65,7 @@ const links = [
         </nav>
         <div class="h-4 w-px bg-text-main/20"></div>
 
-        <button
-          id="theme-toggle"
-          class="p-2 rounded-full hover:bg-text-main/5 text-text-main transition-colors cursor-pointer"
-          aria-label="Toggle Dark Mode"
-        >
-          <span class="material-symbols-outlined hidden dark:block text-[20px]"
-            >light_mode</span
-          >
-          <span class="material-symbols-outlined block dark:hidden text-[20px]"
-            >dark_mode</span
-          >
-        </button>
-
-        <div class="relative group">
-          <button
-            class="flex items-center gap-2 text-white text-sm font-medium hover:text-primary transition-colors py-2"
-          >
-            <span class="text-lg">{languages[lang].flag}</span>
-            <span class="uppercase">{lang}</span>
-            <span class="material-symbols-outlined text-sm">expand_more</span>
-          </button>
-
-          <div
-            class="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
-          >
-            <div
-              class="bg-[#1a2332] border border-white/10 rounded-lg shadow-xl overflow-hidden min-w-[140px] flex flex-col"
-            >
-              {
-                Object.values(languages).map((l) => (
-                  <a
-                    href={getLangPath(l.path)}
-                    class={`flex items-center gap-3 px-4 py-3 text-sm hover:bg-white/5 transition-colors ${lang === l.path ? "text-primary bg-primary/10" : "text-slate-300"}`}
-                  >
-                    <span class="text-lg">{l.flag}</span>
-                    <span>{l.label}</span>
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </div>
+        <Picker lang={lang} />
 
         <button
           class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-[0_0_20px_rgba(19,109,236,0.4)] hover:shadow-[0_0_30px_rgba(19,109,236,0.6)] transition-all duration-300"
