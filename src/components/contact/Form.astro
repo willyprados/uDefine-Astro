@@ -1,0 +1,137 @@
+---
+interface Props {
+  title?: string;
+  name?: string;
+  email?: string;
+  company?: string;
+  service?: string;
+  servicePlaceholder?: string;
+  serviceOpt1?: string;
+  serviceOpt2?: string;
+  serviceOpt3?: string;
+  serviceOpt4?: string;
+  message?: string;
+  send?: string;
+}
+
+const {
+  title,
+  name,
+  email,
+  company,
+  service,
+  servicePlaceholder,
+  serviceOpt1,
+  serviceOpt2,
+  serviceOpt3,
+  serviceOpt4,
+  message,
+  send,
+} = Astro.props;
+---
+
+<div class="relative group">
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"
+  >
+  </div>
+  <div
+    class="relative bg-background-card/60 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl overflow-hidden"
+  >
+    <div
+      class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] rounded-full pointer-events-none"
+    >
+    </div>
+    <h3 class="text-2xl font-bold text-white mb-6">
+      {title}
+    </h3>
+
+    <form id="contact-form" class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <label class="text-slate-400 text-sm font-medium ml-1">{name}</label>
+        <div class="relative">
+          <input
+            class="w-full bg-[#0b1016] border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
+            placeholder="John Doe"
+            type="text"
+          />
+          <span
+            class="material-symbols-outlined absolute right-4 top-3.5 text-slate-600"
+            >person</span
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-slate-400 text-sm font-medium ml-1">{email}</label>
+        <div class="relative">
+          <input
+            class="w-full bg-[#0b1016] border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
+            placeholder="john@company.com"
+            type="email"
+          />
+          <span
+            class="material-symbols-outlined absolute right-4 top-3.5 text-slate-600"
+            >mail</span
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-slate-400 text-sm font-medium ml-1">{company}</label>
+        <div class="relative">
+          <input
+            class="w-full bg-[#0b1016] border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
+            placeholder="Your Company Name"
+            type="text"
+          />
+          <span
+            class="material-symbols-outlined absolute right-4 top-3.5 text-slate-600"
+            >business</span
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-slate-400 text-sm font-medium ml-1">{service}</label>
+        <div class="relative">
+          <select
+            class="w-full bg-[#0b1016] border border-white/10 rounded-xl px-5 py-3.5 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none transition-all duration-300 cursor-pointer"
+          >
+            <option disabled selected value="">{servicePlaceholder}</option>
+            <option value="consulting">{serviceOpt1}</option>
+            <option value="fiori">{serviceOpt2}</option>
+            <option value="operations">{serviceOpt3}</option>
+            <option value="other">{serviceOpt4}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-slate-400 text-sm font-medium ml-1">{message}</label>
+        <textarea
+          class="w-full bg-[#0b1016] border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-none"
+          placeholder="..."
+          rows="4"></textarea>
+      </div>
+
+      <button
+        class="mt-2 flex items-center justify-center gap-2 w-full rounded-xl bg-primary px-8 py-4 text-white font-bold text-lg hover:bg-blue-600 shadow-[0_0_20px_rgba(19,109,236,0.4)] hover:shadow-[0_0_30px_rgba(19,109,236,0.6)] transition-all duration-300 group-hover:scale-[1.02]"
+        type="submit"
+      >
+        {send}
+        <span class="material-symbols-outlined text-sm">send</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log("Formulario de uDefine enviado");
+    });
+  }
+</script>

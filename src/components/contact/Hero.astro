@@ -1,0 +1,60 @@
+---
+interface Props {
+  badge?: string;
+  title1?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+}
+
+const { badge, title1, titleHighlight, subtitle } = Astro.props;
+---
+
+<section
+  class="relative flex flex-col items-center justify-center overflow-hidden px-4 py-24 bg-background-dark"
+>
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#0b1016] via-[#111822] to-[#0f2545]"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-30"
+    >
+    </div>
+    <div
+      class="absolute top-0 right-1/4 w-[600px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"
+    >
+    </div>
+  </div>
+
+  <div
+    class="layout-content-container relative z-20 flex max-w-[960px] flex-col items-center gap-6 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000"
+  >
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium mb-2"
+    >
+      <span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+      {badge}
+    </div>
+    <h1
+      class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl"
+    >
+      {title1}
+      <br />
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary to-blue-400"
+      >
+        {titleHighlight}
+      </span>
+    </h1>
+    <p
+      class="max-w-[700px] text-slate-300 text-lg md:text-xl font-normal leading-relaxed"
+    >
+      {subtitle}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,119 @@
+---
+interface Props {
+  badge?: string;
+  title?: string;
+  desc?: string;
+  location?: string;
+  phone?: string;
+  email?: string;
+  social?: string;
+}
+
+const { badge, title, desc, location, phone, email, social } = Astro.props;
+---
+
+<div class="flex flex-col justify-center gap-12 py-8">
+  <div class="flex flex-col gap-4">
+    <span class="text-primary font-bold tracking-widest uppercase text-sm"
+      >{badge}</span
+    >
+    <h2 class="text-4xl font-bold text-white">{title}</h2>
+    <p class="text-slate-400 text-lg leading-relaxed">{desc}</p>
+  </div>
+
+  <div class="grid gap-8">
+    <div
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+    >
+      <div
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+      >
+        <span class="material-symbols-outlined text-primary text-2xl"
+          >location_on</span
+        >
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-lg mb-1">{location}</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Avenida de Roma, 119, Escalera B, Entlo. Plta 1ª<br />
+          Barcelona, Catalonia 08011, ES
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+    >
+      <div
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+      >
+        <span class="material-symbols-outlined text-primary text-2xl"
+          >phone</span
+        >
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-lg mb-1">{phone}</h4>
+        <a
+          class="text-primary hover:text-white transition-colors"
+          href="tel:+346001234567">+34 600 123 4567</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+    >
+      <div
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+      >
+        <span class="material-symbols-outlined text-primary text-2xl"
+          >alternate_email</span
+        >
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-lg mb-1">{email}</h4>
+        <a
+          class="text-primary hover:text-white transition-colors"
+          href="mailto:hello@udefine.net">hello@udefine.net</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+  >
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <span class="text-slate-500 text-sm font-medium">{social}</span>
+    <div class="flex gap-4">
+      <a
+        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all group"
+        href="https://www.linkedin.com/company/udefine/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="text-slate-300 group-hover:text-white font-medium text-sm"
+          >LinkedIn</span
+        >
+        <span
+          class="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm"
+          >arrow_outward</span
+        >
+      </a>
+      <a
+        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all group"
+        href="#"
+      >
+        <span class="text-slate-300 group-hover:text-white font-medium text-sm"
+          >Twitter</span
+        >
+        <span
+          class="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm"
+          >arrow_outward</span
+        >
+      </a>
+    </div>
+  </div>
+</div>

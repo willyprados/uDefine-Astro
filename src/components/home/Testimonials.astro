@@ -12,26 +12,7 @@ interface Props {
   testimonials?: readonly Testimonial[];
 }
 
-const {
-  subTitle = "Testimonials",
-  title = "What Our Clients Say",
-  testimonials = [
-    {
-      quote:
-        "The logistical optimization achieved with uDefine has been remarkable. Their team ensured a successful integration across our disparate systems, creating a unified workflow that has significantly enhanced our operational efficiency.",
-      author: "Cervezas Alhambra",
-      role: "Strategic Partner",
-      initials: "CA",
-    },
-    {
-      quote:
-        "Implementing electronic invoicing in Brazil involves navigating a highly complex regulatory environment. uDefine handled the challenge with expertise, delivering a robust solution that guarantees compliance and reliability.",
-      author: "Paulo",
-      role: "Finance Manager, MedTech Company Brasil",
-      initials: "PM",
-    },
-  ],
-} = Astro.props;
+const { subTitle, title, testimonials = [] } = Astro.props;
 ---
 
 <section id="success-stories" class="py-20 px-4 lg:px-40 bg-[#0d1219]">
@@ -52,7 +33,7 @@ const {
         testimonials.map((item) => (
           <div class="flex flex-col justify-between gap-6 rounded-xl border border-white/5 bg-background-card p-8 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(19,109,236,0.1)] transition-all duration-300">
             <div class="flex flex-col gap-4">
-              <span class="material-symbols-outlined text-primary text-4xl opacity-50">
+              <span class="testimonial material-symbols-outlined text-primary opacity-50">
                 format_quote
               </span>
               <p class="text-slate-300 leading-relaxed italic">

@@ -11,30 +11,7 @@ interface Props {
   services?: readonly Service[];
 }
 
-const {
-  subTitle = "Our Expertise",
-  title = "Specialized Services for the Modern Enterprise",
-  services = [
-    {
-      icon: "palette",
-      title: "SAP Fiori Design",
-      description:
-        "Creating intuitive UX/UI and custom apps that users love, strictly following Fiori guidelines while pushing creative boundaries.",
-    },
-    {
-      icon: "lightbulb",
-      title: "Strategic Consulting",
-      description:
-        "Guiding your S/4HANA migration and architecture decisions with roadmaps that align technology with business goals.",
-    },
-    {
-      icon: "hub",
-      title: "System Integration",
-      description:
-        "Seamless connectivity across your entire enterprise landscape, ensuring data flows efficiently between SAP and non-SAP systems.",
-    },
-  ],
-} = Astro.props;
+const { subTitle, title, services = [] } = Astro.props;
 ---
 
 <section class="py-20 px-4 lg:px-40 bg-[#0d1219] relative overflow-hidden">
