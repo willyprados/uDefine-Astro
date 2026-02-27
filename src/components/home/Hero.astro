@@ -1,8 +1,8 @@
 ---
 interface Props {
   badge?: string;
-  titlePre?: string; // La parte blanca del título
-  titleHighlight?: string; // La parte con gradiente
+  titlePre?: string;
+  titleHighlight?: string;
   subtitle?: string;
   backgroundImage?: string;
 }
@@ -89,12 +89,9 @@ const {
 </section>
 
 <style>
-  /* Animación de entrada personalizada 
-    (Reemplaza a las clases de plugins externos como 'animate-in')
-  */
   .hero-animation {
     animation: fade-in-up 1s ease-out forwards;
-    opacity: 0; /* Comienza invisible */
+    opacity: 0;
   }
 
   @keyframes fade-in-up {

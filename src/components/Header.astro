@@ -5,33 +5,15 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 interface Props {
   lang: keyof typeof languages;
-  navData: any; // Los textos del menú traducidos
+  navData: any;
 }
 
 const { lang, navData } = Astro.props;
-
-// Función auxiliar para cambiar el idioma en la URL
-// Si estamos en /es/about, cambiar a /en/about
-const currentPath = Astro.url.pathname;
-function getLangPath(targetLang: string) {
-  const segments = currentPath.split("/").filter(Boolean);
-  // Si el primer segmento es un idioma (ej: 'es'), lo reemplazamos
-  if (segments.length > 0 && Object.keys(languages).includes(segments[0])) {
-    segments[0] = targetLang;
-  } else {
-    // Si no hay idioma (raíz), añadimos el idioma al principio
-    segments.unshift(targetLang);
-  }
-  return `/${segments.join("/")}`;
-}
-
-// Definimos los enlaces aquí para mantener el template limpio
-// Definimos los links dinámicamente usando el idioma actual
 const links = [
-  { name: navData.home, href: `/${lang}` }, // Ir al inicio del idioma actual
-  { name: navData.about, href: `/${lang}/about` }, // Ir a About
-  { name: navData.services, href: `/${lang}/services` }, // Ir a Services
-  { name: navData.contact, href: `/${lang}/contact` }, // Ir a Contact
+  { name: navData.home, href: `/${lang}` },
+  { name: navData.about, href: `/${lang}/about` },
+  { name: navData.services, href: `/${lang}/services` },
+  { name: navData.contact, href: `/${lang}/contact` },
 ];
 ---
 

@@ -8,7 +8,6 @@ const languages = [
   { code: "pt", label: "Português", flag: "🇵🇹" },
 ];
 
-// MEJORA 1: Detectar el idioma desde la URL directamente si Astro.currentLocale falla
 const firstSegment = pathname.split("/")[1];
 const supportedLocales = languages.map((l) => l.code);
 const activeLocale =
@@ -32,7 +31,7 @@ const getPathForLocale = (targetLocale: string) => {
 <div class="relative inline-block text-left" id="language-selector">
   <button
     id="dropdown-button"
-    class="flex items-center gap-0 px-3 py-2 bg-slate-900 text-slate-200 rounded-md hover:bg-slate-800 transition-colors border border-transparent focus:border-slate-700 focus:outline-none"
+    class="flex items-center gap-0 px-2 py-1.5 text-slate-200 rounded-md hover:bg-slate-800 transition-colors border border-transparent focus:border-slate-700 focus:outline-none"
     aria-haspopup="true"
     aria-expanded="false"
   >
