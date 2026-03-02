@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  backgroundImage?: string;
+}
+
+const { title, subtitle, backgroundImage } = Astro.props;
+---
+
+<section
+  class="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 py-20"
+>
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-bg-main z-10 transition-colors duration-300"
+    >
+    </div>
+
+    <div
+      class="h-full w-full bg-cover bg-position[center_30%]"
+      role="img"
+      aria-label="Background image"
+      style={`background-image: url('${backgroundImage}');`}
+    >
+    </div>
+  </div>
+
+  <div
+    class="layout-content-container relative z-20 flex max-w-[960px] flex-col items-center gap-6 text-center page-hero-animation"
+  >
+    <h1
+      class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl"
+    >
+      {title}
+    </h1>
+    <h2
+      class="max-w-[800px] text-white/90 text-xl md:text-2xl font-normal leading-relaxed drop-shadow-md"
+    >
+      {subtitle}
+    </h2>
+  </div>
+</section>
+
+<style>
+  /* Animación de entrada suave (reemplaza 'animate-in fade-in...') */
+  .page-hero-animation {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

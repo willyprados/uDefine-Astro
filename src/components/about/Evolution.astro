@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "We reinvent ourselves just like you",
+  description = "Our transformation reflects our commitment to your digital growth. We evolve to be the change your business needs.",
+} = Astro.props;
+---
+
+<section
+  class="py-24 px-4 lg:px-40 bg-bg-main border-t border-border-base transition-colors duration-300"
+>
+  <div
+    class="layout-content-container mx-auto flex max-w-[1000px] flex-col items-center text-center gap-8"
+  >
+    <h2
+      class="text-4xl md:text-5xl font-black text-text-main transition-colors duration-300"
+    >
+      {title}
+    </h2>
+
+    <p
+      class="text-text-muted text-lg max-w-[700px] transition-colors duration-300"
+    >
+      {description}
+    </p>
+
+    <div
+      class="w-full h-px bg-gradient-to-r from-transparent via-text-main/10 to-transparent my-8 transition-colors duration-300"
+    >
+    </div>
+  </div>
+</section>

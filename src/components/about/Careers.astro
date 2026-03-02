@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  checklist?: string[];
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const {
+  title = "Want to join our Team?",
+  description = "Attention all job seekers! Our company is growing and we are on the lookout for talented individuals to join our team. If you are a hardworking, motivated professional with a passion for excellence, we want to hear from you! We offer a challenging and rewarding work environment, competitive compensation packages, and opportunities for growth.",
+  checklist = ["Already a SAP Professional?", "Motivated Graduate?"],
+  ctaText = "Want to know more?",
+  ctaLink = "/contact", // Puedes cambiar esto por mailto:correo@udefine.com
+} = Astro.props;
+---
+
+<section
+  id="careers"
+  class="py-20 px-4 lg:px-40 bg-bg-main relative transition-colors duration-300 border-t border-border-base"
+>
+  <div
+    class="layout-content-container mx-auto flex max-w-[1100px] flex-col md:flex-row gap-16 items-center"
+  >
+    <div class="flex-1 flex flex-col gap-6">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-text-main transition-colors duration-300"
+      >
+        {title}
+      </h2>
+      <p class="text-text-muted leading-relaxed transition-colors duration-300">
+        {description}
+      </p>
+    </div>
+
+    <div class="flex-1 w-full max-w-md">
+      <div
+        class="bg-bg-card rounded-xl border border-border-base p-8 shadow-xl flex flex-col gap-6 transition-colors duration-300"
+      >
+        {
+          checklist.map((item) => (
+            <div class="flex items-center justify-between border-b border-border-base pb-4 transition-colors duration-300">
+              <span class="text-text-main font-medium transition-colors duration-300">
+                {item}
+              </span>
+              <span class="material-symbols-outlined text-green-500">
+                check_circle
+              </span>
+            </div>
+          ))
+        }
+
+        <a
+          href={ctaLink}
+          class="w-full mt-2 flex cursor-pointer items-center justify-center rounded-lg h-12 bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-[0_0_20px_rgba(19,109,236,0.3)] transition-all duration-300 hover:-translate-y-1"
+        >
+          {ctaText}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

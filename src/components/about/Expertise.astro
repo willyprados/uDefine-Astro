@@ -1,0 +1,82 @@
+---
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  features?: Feature[];
+}
+
+const {
+  title = "We speak your Language",
+  features = [
+    {
+      icon: "public",
+      title: "International Expertise Local Understanding",
+      description:
+        "Our SAP consultants bring international expertise tailored to local nuances, ensuring your projects succeed everywhere.",
+    },
+    {
+      icon: "chat_bubble",
+      title: "We Speak SAP! And We Speak Your Language",
+      description:
+        "Get the best of both worlds – technical proficiency and effective communication. Our multilingual team is fluent in SAP solutions and your language.",
+    },
+  ],
+} = Astro.props;
+---
+
+<section
+  class="py-24 px-4 lg:px-40 bg-bg-main relative overflow-hidden transition-colors duration-300"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <div
+    class="layout-content-container mx-auto flex max-w-[1100px] flex-col gap-16 relative z-10"
+  >
+    <div class="text-center">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-text-main mb-4 transition-colors"
+      >
+        {title}
+      </h2>
+      <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {
+        features.map((feature) => (
+          <div class="flex flex-col items-center text-center gap-6 group">
+            <div class="size-20 rounded-2xl bg-gradient-to-br from-bg-card to-bg-main flex items-center justify-center border border-border-base shadow-xl group-hover:border-primary/50 group-hover:shadow-[0_0_30px_rgba(19,109,236,0.2)] transition-all duration-300">
+              <span class="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-3">
+              <h3 class="text-text-main text-xl font-bold transition-colors">
+                {feature.title}
+              </h3>
+
+              <div class="flex gap-1 justify-center mb-2">
+                <span class="w-2 h-2 rounded-full bg-yellow-500" />
+                <span class="w-2 h-2 rounded-full bg-orange-500" />
+                <span class="w-2 h-2 rounded-full bg-red-500" />
+              </div>
+
+              <p class="text-text-muted leading-relaxed max-w-sm mx-auto transition-colors">
+                {feature.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

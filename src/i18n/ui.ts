@@ -208,6 +208,61 @@ export const ui = {
         social: "Follow us on social media",
       },
     },
+    about: {
+      hero: {
+        title: "About Us",
+        subtitle: "We are ready! Let's create something awesome...",
+      },
+      teamIntro: {
+        title: "Experience and Expertise",
+        subtitle: "...meet Our Team of Highly-Qualified Consultants...",
+        description:
+          "Our team of consultants has an average of over 10 years of working experience and is highly qualified to provide exceptional services to our customers. At uDefine, we prioritize building strong relationships, not only with our customers but also within our uDefine family.",
+      },
+      languageExpertise: {
+        title: "We speak your Language",
+        features: [
+          {
+            icon: "public",
+            title: "International Expertise Local Understanding",
+            description:
+              "Our SAP consultants bring international expertise tailored to local nuances, ensuring your projects succeed everywhere.",
+          },
+          {
+            icon: "chat_bubble",
+            title: "We Speak SAP! And We Speak Your Language",
+            description:
+              "Get the best of both worlds – technical proficiency and effective communication. Our multilingual team is fluent in SAP solutions and your language.",
+          },
+        ],
+      },
+      evolution: {
+        title: "We reinvent ourselves just like you",
+        description:
+          "Our transformation reflects our commitment to your digital growth. We evolve to be the change your business needs.",
+      },
+      careers: {
+        title: "Want to join our Team?",
+        description:
+          "Attention all job seekers! Our company is growing and we are on the lookout for talented individuals to join our team. If you are a hardworking, motivated professional with a passion for excellence, we want to hear from you! We offer a challenging and rewarding work environment, competitive compensation packages, and opportunities for growth.",
+        checklist: ["Already a SAP Professional?", "Motivated Graduate?"],
+        ctaText: "Want to know more?",
+        ctaLink: "/contact",
+      },
+      alliances: {
+        title: "Our Alliances",
+        items: [
+          { name: "SAP Member", icon: "verified" },
+          { name: "VENTURESOUQ" },
+          { name: "ONAPSIS", icon: "security", colorClass: "text-orange-500" },
+          { name: "CyberSafe", icon: "shield", colorClass: "text-red-500" },
+          { name: "VOQUZ Labs" },
+          { name: "SNP", icon: "flight" },
+          { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
+          { name: "kgs", fontClass: "font-bold text-xl italic" },
+        ],
+      },
+    },
   },
   es: {
     nav: {
@@ -403,6 +458,62 @@ export const ui = {
         social: "Síguenos en redes sociales",
       },
     },
+    about: {
+      hero: {
+        title: "Nosotros",
+        subtitle: "¡Estamos listos! Creemos algo increíble...",
+      },
+      teamIntro: {
+        title: "Experiencia y Conocimiento",
+        subtitle:
+          "...conoce a nuestro equipo de consultores altamente cualificados...",
+        description:
+          "Nuestro equipo de consultores tiene un promedio de más de 10 años de experiencia laboral y está altamente calificado para brindar servicios excepcionales a nuestros clientes. En uDefine, priorizamos la construcción de relaciones sólidas, no solo con nuestros clientes, sino también dentro de nuestra familia uDefine.",
+      },
+      languageExpertise: {
+        title: "Hablamos tu Idioma",
+        features: [
+          {
+            icon: "public",
+            title: "Experiencia Internacional, Entendimiento Local",
+            description:
+              "Nuestros consultores SAP aportan experiencia internacional adaptada a los matices locales, asegurando el éxito de tus proyectos en cualquier lugar.",
+          },
+          {
+            icon: "chat_bubble",
+            title: "¡Hablamos SAP! Y hablamos tu idioma",
+            description:
+              "Obtén lo mejor de ambos mundos: competencia técnica y comunicación efectiva. Nuestro equipo multilingüe domina las soluciones SAP y tu idioma.",
+          },
+        ],
+      },
+      evolution: {
+        title: "Nos reinventamos al igual que tú",
+        description:
+          "Nuestra transformación refleja nuestro compromiso con tu crecimiento digital. Evolucionamos para ser el cambio que tu negocio necesita.",
+      },
+      careers: {
+        title: "¿Quieres unirte a nuestro equipo?",
+        description:
+          "¡Atención a todos los buscadores de empleo! Nuestra empresa está creciendo y buscamos personas talentosas para unirse a nuestro equipo. Si eres un profesional trabajador, motivado y con pasión por la excelencia, ¡queremos conocerte! Ofrecemos un entorno de trabajo desafiante y gratificante, paquetes de compensación competitivos y oportunidades de crecimiento.",
+        checklist: ["¿Ya eres profesional SAP?", "¿Graduado motivado?"],
+        ctaText: "¿Quieres saber más?",
+        ctaLink: "/contact",
+      },
+      alliances: {
+        title: "Nuestras Alianzas",
+        items: [
+          { name: "Miembro SAP", icon: "verified" },
+          { name: "VENTURESOUQ" },
+          { name: "ONAPSIS", icon: "security", colorClass: "text-orange-500" },
+          { name: "CyberSafe", icon: "shield", colorClass: "text-red-500" },
+          { name: "VOQUZ Labs" },
+          { name: "SNP", icon: "flight" },
+          { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
+          { name: "kgs", fontClass: "font-bold text-xl italic" },
+        ],
+      },
+    },
   },
   de: {
     nav: {
@@ -576,6 +687,62 @@ export const ui = {
         phone: "Rufen Sie uns an",
         email: "Schreiben Sie uns",
         social: "Folgen Sie uns auf Social Media",
+      },
+    },
+    about: {
+      hero: {
+        title: "Über uns",
+        subtitle: "Wir sind bereit! Lass uns etwas Großartiges erschaffen...",
+      },
+      teamIntro: {
+        title: "Erfahrung und Expertise",
+        subtitle:
+          "...lernen Sie unser Team hochqualifizierter Berater kennen...",
+        description:
+          "Unser Beraterteam verfügt über durchschnittlich mehr als 10 Jahre Berufserfahrung und ist hochqualifiziert, um unseren Kunden außergewöhnliche Dienstleistungen zu bieten. Bei uDefine legen wir großen Wert auf den Aufbau starker Beziehungen, nicht nur zu unseren Kunden, sondern auch innerhalb unserer uDefine-Familie.",
+      },
+      languageExpertise: {
+        title: "Wir sprechen Ihre Sprache",
+        features: [
+          {
+            icon: "public",
+            title: "Internationale Expertise, lokales Verständnis",
+            description:
+              "Unsere SAP-Berater bringen internationale Expertise mit, die auf lokale Gegebenheiten zugeschnitten ist, und stellen so sicher, dass Ihre Projekte überall erfolgreich sind.",
+          },
+          {
+            icon: "chat_bubble",
+            title: "Wir sprechen SAP! Und wir sprechen Ihre Sprache",
+            description:
+              "Holen Sie sich das Beste aus beiden Welten: technische Kompetenz und effektive Kommunikation. Unser mehrsprachiges Team beherrscht SAP-Lösungen und Ihre Sprache fließend.",
+          },
+        ],
+      },
+      evolution: {
+        title: "Wir erfinden uns neu, genau wie Sie",
+        description:
+          "Unsere Transformation spiegelt unser Engagement für Ihr digitales Wachstum wider. Wir entwickeln uns weiter, um die Veränderung zu sein, die Ihr Unternehmen braucht.",
+      },
+      careers: {
+        title: "Möchten Sie Teil unseres Teams werden?",
+        description:
+          "Achtung an alle Arbeitssuchenden! Unser Unternehmen wächst und wir suchen talentierte Personen, die unser Team verstärken. Wenn Sie ein hart arbeitender, motivierter Profi mit einer Leidenschaft für Exzellenz sind, möchten wir von Ihnen hören! Wir bieten ein herausforderndes und lohnendes Arbeitsumfeld, wettbewerbsfähige Vergütungspakete und Wachstumsmöglichkeiten.",
+        checklist: ["Bereits SAP-Profi?", "Motivierter Absolvent?"],
+        ctaText: "Möchten Sie mehr erfahren?",
+        ctaLink: "/contact",
+      },
+      alliances: {
+        title: "Unsere Allianzen",
+        items: [
+          { name: "SAP-Mitglied", icon: "verified" },
+          { name: "VENTURESOUQ" },
+          { name: "ONAPSIS", icon: "security", colorClass: "text-orange-500" },
+          { name: "CyberSafe", icon: "shield", colorClass: "text-red-500" },
+          { name: "VOQUZ Labs" },
+          { name: "SNP", icon: "flight" },
+          { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
+          { name: "kgs", fontClass: "font-bold text-xl italic" },
+        ],
       },
     },
   },
@@ -754,6 +921,62 @@ export const ui = {
         social: "Seguici sui social media",
       },
     },
+    about: {
+      hero: {
+        title: "Chi Siamo",
+        subtitle: "Siamo pronti! Creiamo qualcosa di incredibile...",
+      },
+      teamIntro: {
+        title: "Esperienza e Competenza",
+        subtitle:
+          "...incontra il nostro team di consulenti altamente qualificati...",
+        description:
+          "Il nostro team di consulenti ha in media oltre 10 anni di esperienza lavorativa ed è altamente qualificato per fornire servizi eccezionali ai nostri clienti. In uDefine, diamo priorità alla costruzione di relazioni solide, non solo con i nostri clienti, ma anche all'interno della nostra famiglia uDefine.",
+      },
+      languageExpertise: {
+        title: "Parliamo la tua Lingua",
+        features: [
+          {
+            icon: "public",
+            title: "Esperienza Internazionale, Comprensione Locale",
+            description:
+              "I nostri consulenti SAP offrono un'esperienza internazionale adattata alle sfumature locali, garantendo il successo dei tuoi progetti ovunque.",
+          },
+          {
+            icon: "chat_bubble",
+            title: "Parliamo SAP! E parliamo la tua lingua",
+            description:
+              "Ottieni il meglio di entrambi i mondi: competenza tecnica e comunicazione efficace. Il nostro team multilingue padroneggia le soluzioni SAP e la tua lingua.",
+          },
+        ],
+      },
+      evolution: {
+        title: "Ci reinventiamo proprio come te",
+        description:
+          "La nostra trasformazione riflette il nostro impegno per la tua crescita digitale. Ci evolviamo per essere il cambiamento di cui il tuo business ha bisogno.",
+      },
+      careers: {
+        title: "Vuoi unirti al nostro team?",
+        description:
+          "Attenzione a chi cerca lavoro! La nostra azienda sta crescendo e cerchiamo persone di talento per unirsi al nostro team. Se sei una professionista lavoratrice, motivata e con la passione per l'eccellenza, vogliamo conoscerti! Offriamo un ambiente di lavoro stimolante e gratificante, pacchetti retributivi competitivi e opportunità di crescita.",
+        checklist: ["Sei già una professionista SAP?", "Neolaureata motivata?"],
+        ctaText: "Vuoi saperne di più?",
+        ctaLink: "/contact",
+      },
+      alliances: {
+        title: "Le Nostre Alleanze",
+        items: [
+          { name: "Membro SAP", icon: "verified" },
+          { name: "VENTURESOUQ" },
+          { name: "ONAPSIS", icon: "security", colorClass: "text-orange-500" },
+          { name: "CyberSafe", icon: "shield", colorClass: "text-red-500" },
+          { name: "VOQUZ Labs" },
+          { name: "SNP", icon: "flight" },
+          { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
+          { name: "kgs", fontClass: "font-bold text-xl italic" },
+        ],
+      },
+    },
   },
 
   pt: {
@@ -928,6 +1151,62 @@ export const ui = {
         phone: "Ligue para nós",
         email: "Envie um E-mail",
         social: "Siga-nos nas redes sociais",
+      },
+    },
+    about: {
+      hero: {
+        title: "Sobre Nós",
+        subtitle: "Estamos prontos! Vamos criar algo incrível...",
+      },
+      teamIntro: {
+        title: "Experiência e Especialização",
+        subtitle:
+          "...conheça nossa equipe de consultores altamente qualificados...",
+        description:
+          "Nossa equipe de consultores tem uma média de mais de 10 anos de experiência profissional e é altamente qualificada para fornecer serviços excepcionais aos nossos clientes. Na uDefine, priorizamos a construção de relacionamentos fortes, não apenas com nossos clientes, mas também dentro da nossa família uDefine.",
+      },
+      languageExpertise: {
+        title: "Falamos o seu Idioma",
+        features: [
+          {
+            icon: "public",
+            title: "Experiência Internacional, Compreensão Local",
+            description:
+              "Nossos consultores SAP trazem experiência internacional adaptada às nuances locais, garantindo o sucesso de seus projetos em qualquer lugar.",
+          },
+          {
+            icon: "chat_bubble",
+            title: "Falamos SAP! E falamos o seu idioma",
+            description:
+              "Obtenha o melhor dos dois mundos: competência técnica e comunicação eficaz. Nossa equipe multilíngue domina as soluções SAP e o seu idioma.",
+          },
+        ],
+      },
+      evolution: {
+        title: "Nós nos reinventamos assim como você",
+        description:
+          "Nossa transformação reflete nosso compromisso com o seu crescimento digital. Evoluímos para ser a mudança que o seu negócio precisa.",
+      },
+      careers: {
+        title: "Quer se juntar à nossa equipe?",
+        description:
+          "Atenção a todos os candidatos a emprego! Nossa empresa está crescendo e procuramos pessoas talentosas para se juntarem à nossa equipe. Se você é uma profissional dedicada, motivada e com paixão pela excelência, queremos ouvir você! Oferecemos um ambiente de trabalho desafiador e recompensador, pacotes de remuneração competitivos e oportunidades de crescimento.",
+        checklist: ["Já é profissional SAP?", "Recém-formada motivada?"],
+        ctaText: "Quer saber mais?",
+        ctaLink: "/contact",
+      },
+      alliances: {
+        title: "Nossas Alianças",
+        items: [
+          { name: "Membro SAP", icon: "verified" },
+          { name: "VENTURESOUQ" },
+          { name: "ONAPSIS", icon: "security", colorClass: "text-orange-500" },
+          { name: "CyberSafe", icon: "shield", colorClass: "text-red-500" },
+          { name: "VOQUZ Labs" },
+          { name: "SNP", icon: "flight" },
+          { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
+          { name: "kgs", fontClass: "font-bold text-xl italic" },
+        ],
       },
     },
   },

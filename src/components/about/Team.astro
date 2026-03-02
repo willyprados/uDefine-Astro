@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const {
+  title = "Experience and Expertise",
+  subtitle = "...meet Our Team of Highly-Qualified Consultants...",
+  description = "Our team of consultants has an average of over 10 years of working experience and is highly qualified to provide exceptional services to our customers. At uDefine, we prioritize building strong relationships, not only with our customers but also within our uDefine family.",
+} = Astro.props;
+---
+
+<section class="py-24 px-4 lg:px-40 bg-bg-main transition-colors duration-300">
+  <div
+    class="layout-content-container mx-auto flex max-w-[900px] flex-col gap-10 text-center"
+  >
+    <div class="flex flex-col gap-6 items-center">
+      <h2
+        class="text-4xl md:text-5xl font-bold text-text-main tracking-tight transition-colors"
+      >
+        {title}
+      </h2>
+      <p class="text-primary font-medium text-lg uppercase tracking-wider">
+        {subtitle}
+      </p>
+    </div>
+
+    <div
+      class="bg-bg-card p-10 rounded-2xl border border-border-base shadow-2xl relative overflow-hidden transition-colors duration-300"
+    >
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full pointer-events-none"
+      >
+      </div>
+
+      <p
+        class="text-text-muted text-lg leading-loose relative z-10 transition-colors"
+      >
+        {description}
+      </p>
+    </div>
+  </div>
+</section>
