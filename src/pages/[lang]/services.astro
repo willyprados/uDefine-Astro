@@ -1,6 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
 import { languages, ui } from "../../i18n/ui";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/services/Hero.astro";
+import ServiceBlock from "../../components/services/ServiceBlock.astro";
+import MobileDev from "../../components/services/MobileDev.astro";
+import OperationsSupport from "../../components/services/OperationsSupport.astro";
+import ProServices from "../../components/services/ProServices.astro";
+import ActionCTA from "../../components/services/ActionCTA.astro";
 
 export function getStaticPaths() {
   return [
@@ -14,10 +20,49 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = ui[lang as keyof typeof ui] || ui.es;
+const services = t.services;
 ---
 
 <Layout
   title={`uDefine - ${languages[lang as keyof typeof languages]?.label || "Consulting"}`}
 >
-  <h1 class="text-4xl font-bold text-center mt-20 text-white">Services</h1>
+  <Hero
+    badgeText={services.hero.badgeText}
+    title={services.hero.title}
+    subtitle={services.hero.subtitle}
+    primaryBtnText={services.hero.primaryBtnText}
+    secondaryBtnText={services.hero.secondaryBtnText}
+    secondaryBtnLink={`/${lang}/contact`}
+  />
+  <ServiceBlock
+    title={services.consulting.title}
+    description={services.consulting.description}
+    features={services.consulting.features}
+    testimonial={services.consulting.testimonial}
+  />
+  <MobileDev
+    badge={services.mobileDev.badge}
+    titlePre={services.mobileDev.titlePre}
+    titleHighlight={services.mobileDev.titleHighlight}
+    description={services.mobileDev.description}
+    features={services.mobileDev.features}
+  />
+  <OperationsSupport
+    title={services.operations.title}
+    description={services.operations.description}
+    cards={services.operations.cards}
+  />
+  <ProServices
+    subTitle={services.proServices.subTitle}
+    title={services.proServices.title}
+    services={services.proServices.items}
+  />
+  <ActionCTA
+    title={services.cta.title}
+    description={services.cta.description}
+    primaryBtnText={services.cta.primaryBtnText}
+    secondaryBtnText={services.cta.secondaryBtnText}
+    primaryBtnLink={`/${lang}/contact`}
+    secondaryBtnLink={`/${lang}/contact`}
+  />
 </Layout>

@@ -1,0 +1,102 @@
+---
+interface Props {
+  badgeText?: string;
+  title?: string;
+  subtitle?: string;
+  primaryBtnText?: string;
+  primaryBtnLink?: string;
+  secondaryBtnText?: string;
+  secondaryBtnLink?: string;
+}
+
+const {
+  badgeText = "Driving Innovation",
+  title = "Expert SAP Services",
+  subtitle = "We empower your enterprise with cutting-edge SAP solutions, ensuring you stay ahead in the digital era.",
+  primaryBtnText = "Explore Services",
+  primaryBtnLink = "#services-list",
+  secondaryBtnText = "Contact Us",
+  secondaryBtnLink = "/contact",
+} = Astro.props;
+---
+
+<section
+  class="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 py-20 bg-bg-main transition-colors duration-300"
+>
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-bg-main via-bg-card to-primary/10 transition-colors duration-300"
+    >
+    </div>
+
+    <div
+      class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      style="background-image: radial-gradient(var(--color-text-main) 1px, transparent 1px); background-size: 40px 40px;"
+    >
+    </div>
+
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[120px] rounded-full pointer-events-none transition-colors duration-300"
+    >
+    </div>
+  </div>
+
+  <div
+    class="layout-content-container relative z-20 flex max-w-[960px] flex-col items-center gap-6 text-center services-hero-animation"
+  >
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-text-main/5 border border-border-base text-primary text-sm font-medium mb-4 transition-colors duration-300"
+    >
+      <span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+      {badgeText}
+    </div>
+
+    <h1
+      class="text-text-main text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl transition-colors duration-300"
+    >
+      {title}
+    </h1>
+
+    <p
+      class="max-w-[700px] text-text-muted text-lg md:text-xl font-normal leading-relaxed transition-colors duration-300"
+    >
+      {subtitle}
+    </p>
+
+    <div
+      class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto justify-center"
+    >
+      <a
+        href={primaryBtnLink}
+        class="flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-primary/25 hover:-translate-y-1"
+      >
+        {primaryBtnText}
+      </a>
+      <a
+        href={secondaryBtnLink}
+        class="flex items-center justify-center rounded-lg bg-text-main/5 px-8 py-3 text-text-main font-bold hover:bg-text-main/10 transition-all border border-border-base hover:-translate-y-1"
+      >
+        {secondaryBtnText}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación nativa para la entrada del hero */
+  .services-hero-animation {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

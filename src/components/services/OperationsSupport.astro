@@ -1,0 +1,78 @@
+---
+interface SupportCard {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  cards?: SupportCard[];
+}
+
+const {
+  title = "Operations & Support",
+  description = "We ensure smooth operations and take full responsibility for overall system availability, so you can focus on what matters most—your business.",
+  cards = [
+    {
+      icon: "settings_applications",
+      title: "SAP Basis",
+      description:
+        "Comprehensive administration of your SAP landscape, ensuring stability, performance, and reliability 24/7.",
+    },
+    {
+      icon: "verified_user",
+      title: "Authorizations",
+      description:
+        "Robust security roles and authorization management to protect your critical data and ensure compliance.",
+    },
+    {
+      icon: "support_agent",
+      title: "Application Support",
+      description:
+        "Proactive troubleshooting and functional support to resolve issues quickly and keep your users productive.",
+    },
+  ],
+} = Astro.props;
+---
+
+<section
+  class="py-24 px-4 lg:px-40 bg-bg-main border-t border-border-base transition-colors duration-300"
+>
+  <div
+    class="layout-content-container mx-auto max-w-[1200px] flex flex-col gap-16"
+  >
+    <div class="text-center max-w-[800px] mx-auto flex flex-col gap-6">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-text-main transition-colors duration-300"
+      >
+        {title}
+      </h2>
+      <p class="text-text-muted text-lg transition-colors duration-300">
+        {description}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        cards.map((card) => (
+          <div class="group p-8 rounded-2xl bg-bg-card border border-border-base hover:border-primary/50 hover:shadow-[0_0_30px_rgba(19,109,236,0.1)] transition-all duration-300">
+            <div class="size-16 rounded-2xl bg-bg-main border border-border-base flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-symbols-outlined text-primary text-4xl">
+                {card.icon}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-text-main mb-3 transition-colors duration-300">
+              {card.title}
+            </h3>
+            <p class="text-text-muted leading-relaxed transition-colors duration-300">
+              {card.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

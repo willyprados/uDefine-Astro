@@ -1,0 +1,130 @@
+---
+interface ProService {
+  icon: string;
+  badge: string;
+  title: string;
+  description: string;
+  linkText: string;
+  linkUrl: string;
+  theme: "blue" | "cyan"; // Para aplicar los gradientes y colores específicos
+}
+
+interface Props {
+  subTitle?: string;
+  title?: string;
+  services?: ProService[];
+}
+
+const {
+  subTitle = "Specialized Expertise",
+  title = "Complementary Pro Services",
+  services = [
+    {
+      icon: "brush",
+      badge: "Modern UX",
+      title: "SAP Fiori UX Modernization",
+      description:
+        "Transform your legacy SAP GUI screens into modern, responsive, and intuitive Fiori apps. We enhance user adoption and satisfaction by delivering consumer-grade user experiences for enterprise applications.",
+      linkText: "Learn More",
+      linkUrl: "#",
+      theme: "blue",
+    },
+    {
+      icon: "cloud_sync",
+      badge: "BTP",
+      title: "Cloud Integration (BTP)",
+      description:
+        "Seamlessly connect your on-premise and cloud systems using SAP Business Technology Platform. We build robust integration flows and extensions to future-proof your architecture.",
+      linkText: "Learn More",
+      linkUrl: "#",
+      theme: "cyan",
+    },
+  ],
+} = Astro.props;
+
+// Función auxiliar para mapear el tema de color a las clases de Tailwind
+const getThemeClasses = (theme: string) => {
+  if (theme === "cyan") {
+    return {
+      gradientHover: "from-cyan-500/20 to-primary/20",
+      iconBg: "bg-cyan-500/10 text-cyan-500",
+      linkText: "text-cyan-500",
+    };
+  }
+  // Default (Blue/Primary)
+  return {
+    gradientHover: "from-primary/20 to-purple-500/20",
+    iconBg: "bg-blue-500/10 text-blue-500",
+    linkText: "text-primary",
+  };
+};
+---
+
+<section
+  class="py-24 px-4 lg:px-40 bg-bg-main relative overflow-hidden transition-colors duration-300"
+>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-bg-main to-bg-main transition-colors duration-300"
+  >
+  </div>
+
+  <div class="layout-content-container mx-auto max-w-[1200px] relative z-10">
+    <div class="flex flex-col items-center text-center gap-4 mb-16">
+      <span class="text-primary font-bold tracking-widest uppercase text-sm">
+        {subTitle}
+      </span>
+      <h2
+        class="text-3xl md:text-5xl font-bold text-text-main transition-colors duration-300"
+      >
+        {title}
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        services.map((service) => {
+          const styles = getThemeClasses(service.theme);
+
+          return (
+            <div class="relative group rounded-3xl overflow-hidden bg-gradient-to-br from-border-base to-transparent p-1 transition-all duration-300">
+              <div
+                class={`absolute inset-0 bg-gradient-to-r ${styles.gradientHover} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+              />
+
+              <div class="relative bg-bg-card rounded-[22px] p-8 h-full flex flex-col border border-border-base transition-colors duration-300">
+                <div class="flex items-center justify-between mb-6">
+                  <div class={`p-3 rounded-lg ${styles.iconBg}`}>
+                    <span class="material-symbols-outlined text-3xl">
+                      {service.icon}
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full border border-border-base text-xs text-text-muted font-medium bg-text-main/5 transition-colors duration-300">
+                    {service.badge}
+                  </span>
+                </div>
+
+                <h3 class="text-2xl font-bold text-text-main mb-4 transition-colors duration-300">
+                  {service.title}
+                </h3>
+
+                <p class="text-text-muted mb-6 flex-grow transition-colors duration-300">
+                  {service.description}
+                </p>
+
+                <a
+                  class={`inline-flex items-center ${styles.linkText} font-bold hover:gap-2 transition-all w-fit`}
+                  href={service.linkUrl}
+                >
+                  {service.linkText}{" "}
+                  <span class="material-symbols-outlined text-sm ml-1">
+                    arrow_forward
+                  </span>
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

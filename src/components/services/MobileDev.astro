@@ -1,0 +1,310 @@
+---
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  badge?: string;
+  titlePre?: string;
+  titleHighlight?: string;
+  description?: string;
+  features?: Feature[];
+}
+
+const {
+  badge = "SAP Mobile Development",
+  titlePre = "Revolutionize your",
+  titleHighlight = "business",
+  description = "Create intuitive, powerful mobile experiences that connect your workforce and streamline your processes. We bring Fiori-style elegance to every device.",
+  features = [
+    {
+      icon: "speed",
+      title: "Streamlined Operations",
+      description:
+        "Reduce latency and improve workflow efficiency with optimized mobile apps.",
+    },
+    {
+      icon: "tune",
+      title: "Personalized Solutions",
+      description:
+        "Custom-tailored interfaces that match your specific user roles and needs.",
+    },
+  ],
+} = Astro.props;
+---
+
+<section
+  class="py-24 px-4 lg:px-40 bg-bg-main overflow-hidden relative transition-colors duration-300"
+>
+  <div
+    class="absolute top-1/2 left-0 w-1/2 h-full bg-gradient-to-r from-primary/5 to-transparent blur-3xl pointer-events-none"
+  >
+  </div>
+
+  <div class="layout-content-container mx-auto max-w-[1200px]">
+    <div
+      class="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-24"
+    >
+      <div
+        class="flex-1 w-full flex justify-center relative"
+        style="perspective: 1000px;"
+      >
+        <div
+          class="relative z-10 w-[300px] md:w-[340px] h-[600px] md:h-[680px] bg-black rounded-[3rem] border-8 border-[#2a303c] shadow-2xl transform [transform:rotateY(12deg)] transition-transform duration-500 hover:[transform:rotateY(0deg)_scale(1.05)] overflow-hidden cursor-pointer"
+        >
+          <div
+            class="w-full h-full bg-slate-800 relative overflow-hidden flex flex-col font-sans select-none"
+          >
+            <img
+              alt="Dashboard Screen"
+              class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay pointer-events-none"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+            />
+
+            <div
+              class="absolute inset-0 z-20 bg-[#12171f]/95 flex flex-col font-sans"
+            >
+              <header
+                class="bg-[#1b2330] px-5 pt-12 pb-4 border-b border-white/5 flex items-center justify-between shadow-md relative z-10"
+              >
+                <div class="flex items-center gap-3">
+                  <button
+                    class="text-white hover:text-primary transition-colors"
+                    ><span class="material-symbols-outlined">menu</span></button
+                  >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="h-6 w-6 rounded bg-primary flex items-center justify-center"
+                    >
+                      <span
+                        class="material-symbols-outlined text-white text-sm font-bold"
+                        >widgets</span>
+                    </div>
+                    <h1 class="text-white font-bold text-lg tracking-tight">
+                      Fiori App
+                    </h1>
+                  </div>
+                </div>
+                <div
+                  class="size-8 rounded-full bg-gradient-to-tr from-primary to-blue-400 p-[1px]"
+                >
+                  <div
+                    class="w-full h-full rounded-full bg-[#1b2330] flex items-center justify-center"
+                  >
+                    <span class="text-xs font-bold text-white">JD</span>
+                  </div>
+                </div>
+              </header>
+
+              <div class="px-4 py-3 bg-[#12171f] relative z-10">
+                <div class="relative group">
+                  <input
+                    class="w-full bg-[#1c2430] text-slate-200 text-sm rounded-lg pl-10 pr-4 py-2.5 border border-white/5 focus:border-primary/50 outline-none transition-all placeholder:text-slate-500 pointer-events-none"
+                    placeholder="Search apps and data..."
+                    type="text"
+                  />
+                  <span
+                    class="material-symbols-outlined absolute left-3 top-2.5 text-slate-500 text-lg"
+                    >search</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex-1 overflow-y-auto no-scrollbar px-4 pb-4 bg-gradient-to-b from-[#12171f] to-[#0f141a]"
+              >
+                <div class="flex items-center justify-between mb-3 mt-1">
+                  <h2
+                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                  >
+                    Key Performance
+                  </h2>
+                </div>
+                <div class="grid grid-cols-2 gap-3 mb-6">
+                  <div
+                    class="bg-[#1c2430] p-4 rounded-xl border border-white/5 shadow-sm relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 right-0 w-12 h-12 bg-primary/5 rounded-bl-3xl"
+                    >
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                      <span class="text-slate-400 text-xs font-medium"
+                        >Revenue</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-primary text-lg"
+                        >payments</span
+                      >
+                    </div>
+                    <div class="text-xl font-bold text-white mb-1">$4.2M</div>
+                    <div class="flex items-center gap-1">
+                      <span
+                        class="material-symbols-outlined text-emerald-400 text-sm"
+                        >trending_up</span
+                      >
+                      <span class="text-xs font-medium text-emerald-400"
+                        >+12.5%</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="bg-[#1c2430] p-4 rounded-xl border border-white/5 shadow-sm"
+                  >
+                    <div class="flex justify-between items-start mb-2">
+                      <span class="text-slate-400 text-xs font-medium"
+                        >Stock</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-amber-500 text-lg"
+                        >inventory_2</span
+                      >
+                    </div>
+                    <div class="text-xl font-bold text-white mb-1">Low</div>
+                    <div
+                      class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden mt-1"
+                    >
+                      <div class="bg-amber-500 h-full w-[35%]"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <h2
+                  class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3"
+                >
+                  My Tasks
+                </h2>
+                <div class="space-y-2">
+                  <div
+                    class="bg-[#1c2430] p-3 rounded-xl border border-white/5 flex items-center gap-3"
+                  >
+                    <div
+                      class="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-primary border border-blue-500/20"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >shopping_cart</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-white text-sm font-bold truncate">
+                        Approve PO
+                      </h3>
+                      <p class="text-slate-500 text-xs truncate">
+                        Global Tech Supplies
+                      </p>
+                    </div>
+                    <span class="size-2 rounded-full bg-primary animate-pulse"
+                    ></span>
+                  </div>
+                  <div
+                    class="bg-[#1c2430] p-3 rounded-xl border border-white/5 flex items-center gap-3"
+                  >
+                    <div
+                      class="size-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 text-purple-400 border border-purple-500/20"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >flight</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-white text-sm font-bold truncate">
+                        Travel Request
+                      </h3>
+                      <p class="text-slate-500 text-xs truncate">
+                        Berlin Conf 2026
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#1b2330] border-t border-white/5 px-6 py-3 flex justify-between items-center relative z-10 pb-6 md:pb-3"
+              >
+                <button class="text-primary"
+                  ><span class="material-symbols-outlined text-xl"
+                    >dashboard</span
+                  ></button
+                >
+                <button class="text-slate-500"
+                  ><span class="material-symbols-outlined text-xl"
+                    >analytics</span
+                  ></button
+                >
+                <button class="text-slate-500 relative">
+                  <span class="material-symbols-outlined text-xl"
+                    >notifications</span
+                  >
+                  <span
+                    class="absolute -top-0.5 -right-0.5 size-2 bg-red-500 rounded-full"
+                  ></span>
+                </button>
+                <button class="text-slate-500"
+                  ><span class="material-symbols-outlined text-xl"
+                    >settings</span
+                  ></button
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-[#2a303c] rounded-b-xl z-30"
+          >
+          </div>
+        </div>
+
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/20 blur-[100px] -z-10 rounded-full"
+        >
+        </div>
+      </div>
+
+      <div class="flex-1 flex flex-col gap-8">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-medium w-fit"
+        >
+          <span class="material-symbols-outlined text-sm">smartphone</span>
+          {badge}
+        </div>
+
+        <h2
+          class="text-4xl md:text-5xl font-bold text-text-main leading-tight transition-colors duration-300"
+        >
+          {titlePre}
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500"
+            >{titleHighlight}</span
+          >
+        </h2>
+
+        <p
+          class="text-text-muted text-lg leading-relaxed transition-colors duration-300"
+        >
+          {description}
+        </p>
+
+        <div class="grid gap-6">
+          {
+            features.map((feature) => (
+              <div class="flex gap-4 p-4 rounded-xl bg-text-main/5 border border-border-base hover:border-primary/30 transition-colors">
+                <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-primary">
+                    {feature.icon}
+                  </span>
+                </div>
+                <div>
+                  <h4 class="text-text-main font-bold text-lg transition-colors duration-300">
+                    {feature.title}
+                  </h4>
+                  <p class="text-text-muted mt-1 transition-colors duration-300">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

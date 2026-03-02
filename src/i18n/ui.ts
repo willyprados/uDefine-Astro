@@ -263,6 +263,122 @@ export const ui = {
         ],
       },
     },
+    services: {
+      hero: {
+        badgeText: "Driving Innovation",
+        title: "Expert SAP Services",
+        subtitle:
+          "We empower your enterprise with cutting-edge SAP solutions, ensuring you stay ahead in the digital era.",
+        primaryBtnText: "Explore Services",
+        secondaryBtnText: "Contact Us",
+      },
+      consulting: {
+        title: "SAP Consulting Services",
+        description:
+          "Maximize the power of SAP to align perfectly with your business objectives. Our expert consultants guide you through every step of your journey, ensuring value-driven results.",
+        features: [
+          {
+            title: "Digital Transformation",
+            description:
+              "Reimagine your business processes for the digital age.",
+          },
+          {
+            title: "S/4 Hana Rollouts",
+            description:
+              "Expertise in both Greenfield and Brownfield implementations.",
+          },
+          {
+            title: "Project Management",
+            description:
+              "Agile methodologies ensuring on-time and on-budget delivery.",
+          },
+        ],
+        testimonial: {
+          quote:
+            '"uDefine helped us navigate our S/4HANA migration with zero downtime."',
+          label: "Success Story",
+        },
+      },
+      mobileDev: {
+        badge: "SAP Mobile Development",
+        titlePre: "Revolutionize your",
+        titleHighlight: "business",
+        description:
+          "Create intuitive, powerful mobile experiences that connect your workforce and streamline your processes. We bring Fiori-style elegance to every device.",
+        features: [
+          {
+            icon: "speed",
+            title: "Streamlined Operations",
+            description:
+              "Reduce latency and improve workflow efficiency with optimized mobile apps.",
+          },
+          {
+            icon: "tune",
+            title: "Personalized Solutions",
+            description:
+              "Custom-tailored interfaces that match your specific user roles and needs.",
+          },
+        ],
+      },
+      operations: {
+        title: "Operations & Support",
+        description:
+          "We ensure smooth operations and take full responsibility for overall system availability, so you can focus on what matters most—your business.",
+        cards: [
+          {
+            icon: "settings_applications",
+            title: "SAP Basis",
+            description:
+              "Comprehensive administration of your SAP landscape, ensuring stability, performance, and reliability 24/7.",
+          },
+          {
+            icon: "verified_user",
+            title: "Authorizations",
+            description:
+              "Robust security roles and authorization management to protect your critical data and ensure compliance.",
+          },
+          {
+            icon: "support_agent",
+            title: "Application Support",
+            description:
+              "Proactive troubleshooting and functional support to resolve issues quickly and keep your users productive.",
+          },
+        ],
+      },
+      proServices: {
+        subTitle: "Specialized Expertise",
+        title: "Complementary Pro Services",
+        items: [
+          {
+            icon: "brush",
+            badge: "Modern UX",
+            title: "SAP Fiori UX Modernization",
+            description:
+              "Transform your legacy SAP GUI screens into modern, responsive, and intuitive Fiori apps. We enhance user adoption and satisfaction by delivering consumer-grade user experiences for enterprise applications.",
+            linkText: "Learn More",
+            linkUrl: "#",
+            theme: "blue",
+          },
+          {
+            icon: "cloud_sync",
+            badge: "BTP",
+            title: "Cloud Integration (BTP)",
+            description:
+              "Seamlessly connect your on-premise and cloud systems using SAP Business Technology Platform. We build robust integration flows and extensions to future-proof your architecture.",
+            linkText: "Learn More",
+            linkUrl: "#",
+            theme: "cyan",
+          },
+        ],
+      },
+      cta: {
+        title: "Ready to Transform?",
+        description:
+          "Let's discuss how our SAP expertise can drive your business forward. Get in touch with our team today.",
+        primaryBtnText: "Start Your Project",
+        secondaryBtnText: "Contact Sales",
+      },
+    },
   },
   es: {
     nav: {
@@ -514,6 +630,122 @@ export const ui = {
         ],
       },
     },
+    services: {
+      hero: {
+        badgeText: "Impulsando la Innovación",
+        title: "Servicios SAP Expertos",
+        subtitle:
+          "Potenciamos tu empresa con soluciones SAP de vanguardia, asegurando que te mantengas a la cabeza en la era digital.",
+        primaryBtnText: "Explorar Servicios",
+        secondaryBtnText: "Contáctanos",
+      },
+      consulting: {
+        title: "Servicios de Consultoría SAP",
+        description:
+          "Maximiza el poder de SAP para alinearlo perfectamente con tus objetivos de negocio. Nuestros consultores expertos te guían en cada paso del camino, asegurando resultados orientados al valor.",
+        features: [
+          {
+            title: "Transformación Digital",
+            description:
+              "Reimagina tus procesos de negocio para la era digital.",
+          },
+          {
+            title: "Implementaciones S/4 HANA",
+            description:
+              "Experiencia en implementaciones tanto Greenfield como Brownfield.",
+          },
+          {
+            title: "Gestión de Proyectos",
+            description:
+              "Metodologías ágiles que garantizan entregas a tiempo y dentro del presupuesto.",
+          },
+        ],
+        testimonial: {
+          quote:
+            '"uDefine nos ayudó a navegar nuestra migración a S/4HANA con cero tiempo de inactividad."',
+          label: "Caso de Éxito",
+        },
+      },
+      mobileDev: {
+        badge: "Desarrollo Móvil SAP",
+        titlePre: "Revoluciona tu",
+        titleHighlight: "negocio",
+        description:
+          "Crea experiencias móviles intuitivas y potentes que conecten a tu equipo y optimicen tus procesos. Llevamos la elegancia del estilo Fiori a cada dispositivo.",
+        features: [
+          {
+            icon: "speed",
+            title: "Operaciones Optimizadas",
+            description:
+              "Reduce la latencia y mejora la eficiencia del flujo de trabajo con aplicaciones móviles optimizadas.",
+          },
+          {
+            icon: "tune",
+            title: "Soluciones Personalizadas",
+            description:
+              "Interfaces hechas a medida que se adaptan a tus roles y necesidades de usuario específicos.",
+          },
+        ],
+      },
+      operations: {
+        title: "Operaciones y Soporte",
+        description:
+          "Aseguramos operaciones fluidas y asumimos toda la responsabilidad de la disponibilidad del sistema, para que puedas centrarte en lo que más importa: tu negocio.",
+        cards: [
+          {
+            icon: "settings_applications",
+            title: "SAP Basis",
+            description:
+              "Administración integral de tu entorno SAP, garantizando estabilidad, rendimiento y fiabilidad 24/7.",
+          },
+          {
+            icon: "verified_user",
+            title: "Autorizaciones",
+            description:
+              "Roles de seguridad robustos y gestión de autorizaciones para proteger tus datos críticos y asegurar el cumplimiento normativo.",
+          },
+          {
+            icon: "support_agent",
+            title: "Soporte de Aplicaciones",
+            description:
+              "Resolución de problemas proactiva y soporte funcional para resolver incidencias rápidamente y mantener productivos a tus usuarios.",
+          },
+        ],
+      },
+      proServices: {
+        subTitle: "Experiencia Especializada",
+        title: "Servicios Pro Complementarios",
+        items: [
+          {
+            icon: "brush",
+            badge: "UX Moderna",
+            title: "Modernización UX SAP Fiori",
+            description:
+              "Transforma tus pantallas SAP GUI heredadas en aplicaciones Fiori modernas, responsivas e intuitivas. Mejoramos la adopción y satisfacción del usuario ofreciendo experiencias de grado de consumidor para aplicaciones empresariales.",
+            linkText: "Saber más",
+            linkUrl: "#",
+            theme: "blue",
+          },
+          {
+            icon: "cloud_sync",
+            badge: "BTP",
+            title: "Integración Cloud (BTP)",
+            description:
+              "Conecta sin problemas tus sistemas locales y en la nube utilizando SAP Business Technology Platform. Construimos flujos de integración y extensiones robustas para preparar tu arquitectura para el futuro.",
+            linkText: "Saber más",
+            linkUrl: "#",
+            theme: "cyan",
+          },
+        ],
+      },
+      cta: {
+        title: "¿Listo para Transformar?",
+        description:
+          "Hablemos de cómo nuestra experiencia en SAP puede impulsar tu negocio. Ponte en contacto con nuestro equipo hoy mismo.",
+        primaryBtnText: "Inicia tu Proyecto",
+        secondaryBtnText: "Contactar Ventas",
+      },
+    },
   },
   de: {
     nav: {
@@ -743,6 +975,122 @@ export const ui = {
           { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
           { name: "kgs", fontClass: "font-bold text-xl italic" },
         ],
+      },
+    },
+    services: {
+      hero: {
+        badgeText: "Innovation vorantreiben",
+        title: "Kompetente SAP-Dienstleistungen",
+        subtitle:
+          "Wir stärken Ihr Unternehmen mit modernsten SAP-Lösungen und stellen sicher, dass Sie im digitalen Zeitalter an der Spitze bleiben.",
+        primaryBtnText: "Dienste entdecken",
+        secondaryBtnText: "Kontaktiere uns",
+      },
+      consulting: {
+        title: "SAP-Beratungsdienste",
+        description:
+          "Maximieren Sie die Leistungsfähigkeit von SAP, um sie perfekt an Ihre Geschäftsziele anzupassen. Unsere fachkundigen Berater begleiten Sie auf jedem Schritt Ihrer Reise und sorgen für wertorientierte Ergebnisse.",
+        features: [
+          {
+            title: "Digitale Transformation",
+            description:
+              "Denken Sie Ihre Geschäftsprozesse für das digitale Zeitalter neu.",
+          },
+          {
+            title: "S/4 HANA Rollouts",
+            description:
+              "Expertise in Greenfield- und Brownfield-Implementierungen.",
+          },
+          {
+            title: "Projektmanagement",
+            description:
+              "Agile Methoden, die eine pünktliche und budgetgerechte Lieferung gewährleisten.",
+          },
+        ],
+        testimonial: {
+          quote:
+            '"uDefine hat uns geholfen, unsere S/4HANA-Migration ohne Ausfallzeiten zu bewältigen."',
+          label: "Erfolgsgeschichte",
+        },
+      },
+      mobileDev: {
+        badge: "SAP Mobile Entwicklung",
+        titlePre: "Revolutionieren Sie Ihr",
+        titleHighlight: "Geschäft",
+        description:
+          "Schaffen Sie intuitive, leistungsstarke mobile Erlebnisse, die Ihre Mitarbeiter vernetzen und Ihre Prozesse optimieren. Wir bringen Fiori-Eleganz auf jedes Gerät.",
+        features: [
+          {
+            icon: "speed",
+            title: "Optimierte Abläufe",
+            description:
+              "Reduzieren Sie Latenzzeiten und verbessern Sie die Workflow-Effizienz mit optimierten mobilen Apps.",
+          },
+          {
+            icon: "tune",
+            title: "Personalisierte Lösungen",
+            description:
+              "Maßgeschneiderte Schnittstellen, die Ihren spezifischen Benutzerrollen und Anforderungen entsprechen.",
+          },
+        ],
+      },
+      operations: {
+        title: "Betrieb & Support",
+        description:
+          "Wir sorgen für einen reibungslosen Betrieb und übernehmen die volle Verantwortung für die Systemverfügbarkeit, damit Sie sich auf das Wichtigste konzentrieren können – Ihr Geschäft.",
+        cards: [
+          {
+            icon: "settings_applications",
+            title: "SAP Basis",
+            description:
+              "Umfassende Administration Ihrer SAP-Landschaft zur Gewährleistung von Stabilität, Leistung und Zuverlässigkeit rund um die Uhr.",
+          },
+          {
+            icon: "verified_user",
+            title: "Berechtigungen",
+            description:
+              "Robuste Sicherheitsrollen und Berechtigungsmanagement zum Schutz Ihrer kritischen Daten und zur Gewährleistung der Compliance.",
+          },
+          {
+            icon: "support_agent",
+            title: "Anwendungs-Support",
+            description:
+              "Proaktive Fehlerbehebung und funktionaler Support, um Probleme schnell zu lösen und Ihre Benutzer produktiv zu halten.",
+          },
+        ],
+      },
+      proServices: {
+        subTitle: "Spezialisierte Expertise",
+        title: "Ergänzende Pro-Dienste",
+        items: [
+          {
+            icon: "brush",
+            badge: "Moderne UX",
+            title: "SAP Fiori UX Modernisierung",
+            description:
+              "Verwandeln Sie Ihre veralteten SAP GUI-Bildschirme in moderne, reaktionsschnelle und intuitive Fiori-Apps. Wir verbessern die Benutzerakzeptanz und -zufriedenheit, indem wir benutzerfreundliche Erfahrungen für Unternehmensanwendungen liefern.",
+            linkText: "Mehr erfahren",
+            linkUrl: "#",
+            theme: "blue",
+          },
+          {
+            icon: "cloud_sync",
+            badge: "BTP",
+            title: "Cloud-Integration (BTP)",
+            description:
+              "Verbinden Sie Ihre lokalen und Cloud-Systeme nahtlos mit der SAP Business Technology Platform. Wir entwickeln robuste Integrationsflüsse und Erweiterungen, um Ihre Architektur zukunftssicher zu machen.",
+            linkText: "Mehr erfahren",
+            linkUrl: "#",
+            theme: "cyan",
+          },
+        ],
+      },
+      cta: {
+        title: "Bereit für die Transformation?",
+        description:
+          "Lassen Sie uns besprechen, wie unsere SAP-Expertise Ihr Unternehmen voranbringen kann. Kontaktieren Sie unser Team noch heute.",
+        primaryBtnText: "Projekt starten",
+        secondaryBtnText: "Vertrieb kontaktieren",
       },
     },
   },
@@ -977,6 +1325,122 @@ export const ui = {
         ],
       },
     },
+    services: {
+      hero: {
+        badgeText: "Guidare l'Innovazione",
+        title: "Servizi SAP Esperti",
+        subtitle:
+          "Potenziamo la tua azienda con soluzioni SAP all'avanguardia, assicurandoti di rimanere in prima linea nell'era digitale.",
+        primaryBtnText: "Esplora i Servizi",
+        secondaryBtnText: "Contattaci",
+      },
+      consulting: {
+        title: "Servizi di Consulenza SAP",
+        description:
+          "Massimizza il potere di SAP per allinearlo perfettamente ai tuoi obiettivi aziendali. I nostri consulenti esperti ti guidano in ogni fase del tuo percorso, garantendo risultati orientati al valore.",
+        features: [
+          {
+            title: "Trasformazione Digitale",
+            description:
+              "Ripensa i tuoi processi aziendali per l'era digitale.",
+          },
+          {
+            title: "Implementazioni S/4 HANA",
+            description:
+              "Competenza in implementazioni sia Greenfield che Brownfield.",
+          },
+          {
+            title: "Gestione dei Progetti",
+            description:
+              "Metodologie agili che garantiscono consegne puntuali e nel rispetto del budget.",
+          },
+        ],
+        testimonial: {
+          quote:
+            '"uDefine ci ha aiutato a gestire la nostra migrazione a S/4HANA con zero tempi di inattività."',
+          label: "Caso di Successo",
+        },
+      },
+      mobileDev: {
+        badge: "Sviluppo Mobile SAP",
+        titlePre: "Rivoluziona il tuo",
+        titleHighlight: "business",
+        description:
+          "Crea esperienze mobili intuitive e potenti che connettono la tua forza lavoro e ottimizzano i tuoi processi. Portiamo l'eleganza dello stile Fiori su ogni dispositivo.",
+        features: [
+          {
+            icon: "speed",
+            title: "Operazioni Ottimizzate",
+            description:
+              "Riduci la latenza e migliora l'efficienza del flusso di lavoro con app mobili ottimizzate.",
+          },
+          {
+            icon: "tune",
+            title: "Soluzioni Personalizzate",
+            description:
+              "Interfacce su misura che si adattano ai ruoli e alle esigenze specifiche dei tuoi utenti.",
+          },
+        ],
+      },
+      operations: {
+        title: "Operazioni e Supporto",
+        description:
+          "Garantiamo operazioni fluide e ci assumiamo la piena responsabilità della disponibilità del sistema, così puoi concentrarti su ciò che conta di più: il tuo business.",
+        cards: [
+          {
+            icon: "settings_applications",
+            title: "SAP Basis",
+            description:
+              "Amministrazione completa del tuo ambiente SAP, garantendo stabilità, prestazioni e affidabilità 24/7.",
+          },
+          {
+            icon: "verified_user",
+            title: "Autorizzazioni",
+            description:
+              "Ruoli di sicurezza robusti e gestione delle autorizzazioni per proteggere i tuoi dati critici e garantire la conformità.",
+          },
+          {
+            icon: "support_agent",
+            title: "Supporto Applicativo",
+            description:
+              "Risoluzione proattiva dei problemi e supporto funzionale per risolvere rapidamente le anomalie e mantenere produttivi i tuoi utenti.",
+          },
+        ],
+      },
+      proServices: {
+        subTitle: "Competenza Specializzata",
+        title: "Servizi Pro Complementari",
+        items: [
+          {
+            icon: "brush",
+            badge: "UX Moderna",
+            title: "Modernizzazione UX SAP Fiori",
+            description:
+              "Trasforma le tue schermate SAP GUI legacy in app Fiori moderne, reattive e intuitive. Miglioriamo l'adozione e la soddisfazione degli utenti offrendo esperienze utente di livello consumer per le applicazioni aziendali.",
+            linkText: "Scopri di più",
+            linkUrl: "#",
+            theme: "blue",
+          },
+          {
+            icon: "cloud_sync",
+            badge: "BTP",
+            title: "Integrazione Cloud (BTP)",
+            description:
+              "Connetti senza problemi i tuoi sistemi on-premise e cloud utilizzando SAP Business Technology Platform. Sviluppiamo flussi di integrazione ed estensioni robusti per rendere la tua architettura a prova di futuro.",
+            linkText: "Scopri di più",
+            linkUrl: "#",
+            theme: "cyan",
+          },
+        ],
+      },
+      cta: {
+        title: "Pronto per la Trasformazione?",
+        description:
+          "Parliamo di come la nostra esperienza SAP può far crescere il tuo business. Contatta il nostro team oggi stesso.",
+        primaryBtnText: "Inizia il tuo Progetto",
+        secondaryBtnText: "Contatta le Vendite",
+      },
+    },
   },
 
   pt: {
@@ -1207,6 +1671,122 @@ export const ui = {
           { name: "Panaya", icon: "circle", colorClass: "text-cyan-400" },
           { name: "kgs", fontClass: "font-bold text-xl italic" },
         ],
+      },
+    },
+    services: {
+      hero: {
+        badgeText: "Impulsionando a Inovação",
+        title: "Serviços SAP Especializados",
+        subtitle:
+          "Capacitamos sua empresa com soluções SAP de ponta, garantindo que você fique à frente na era digital.",
+        primaryBtnText: "Explorar Serviços",
+        secondaryBtnText: "Contate-nos",
+      },
+      consulting: {
+        title: "Serviços de Consultoria SAP",
+        description:
+          "Maximize o poder do SAP para alinhá-lo perfeitamente aos seus objetivos de negócios. Nossos consultores especializados orientam você em cada etapa de sua jornada, garantindo resultados orientados a valor.",
+        features: [
+          {
+            title: "Transformação Digital",
+            description:
+              "Reimagine seus processos de negócios para a era digital.",
+          },
+          {
+            title: "Implementações S/4 HANA",
+            description:
+              "Experiência em implementações Greenfield e Brownfield.",
+          },
+          {
+            title: "Gerenciamento de Projetos",
+            description:
+              "Metodologias ágeis garantindo entregas no prazo e dentro do orçamento.",
+          },
+        ],
+        testimonial: {
+          quote:
+            '"A uDefine nos ajudou a navegar em nossa migração para o S/4HANA com zero tempo de inatividade."',
+          label: "Caso de Sucesso",
+        },
+      },
+      mobileDev: {
+        badge: "Desenvolvimento Mobile SAP",
+        titlePre: "Revolucione o seu",
+        titleHighlight: "negócio",
+        description:
+          "Crie experiências móveis intuitivas e poderosas que conectam sua equipe e otimizam seus processos. Levamos a elegância do estilo Fiori para todos os dispositivos.",
+        features: [
+          {
+            icon: "speed",
+            title: "Operações Otimizadas",
+            description:
+              "Reduza a latência e melhore a eficiência do fluxo de trabalho com aplicativos móveis otimizados.",
+          },
+          {
+            icon: "tune",
+            title: "Soluções Personalizadas",
+            description:
+              "Interfaces sob medida que correspondem aos seus papéis e necessidades de usuário específicos.",
+          },
+        ],
+      },
+      operations: {
+        title: "Operações e Suporte",
+        description:
+          "Garantimos operações tranquilas e assumimos total responsabilidade pela disponibilidade geral do sistema, para que você possa focar no que mais importa: o seu negócio.",
+        cards: [
+          {
+            icon: "settings_applications",
+            title: "SAP Basis",
+            description:
+              "Administração abrangente de sua paisagem SAP, garantindo estabilidade, desempenho e confiabilidade 24/7.",
+          },
+          {
+            icon: "verified_user",
+            title: "Autorizações",
+            description:
+              "Papéis de segurança robustos e gerenciamento de autorizações para proteger seus dados críticos e garantir conformidade.",
+          },
+          {
+            icon: "support_agent",
+            title: "Suporte de Aplicações",
+            description:
+              "Solução de problemas proativa e suporte funcional para resolver incidentes rapidamente e manter seus usuários produtivos.",
+          },
+        ],
+      },
+      proServices: {
+        subTitle: "Especialização Dedicada",
+        title: "Serviços Pro Complementares",
+        items: [
+          {
+            icon: "brush",
+            badge: "UX Moderna",
+            title: "Modernização UX SAP Fiori",
+            description:
+              "Transforme suas telas legadas do SAP GUI em aplicativos Fiori modernos, responsivos e intuitivos. Melhoramos a adoção e a satisfação do usuário, oferecendo experiências de nível de consumidor para aplicativos corporativos.",
+            linkText: "Saiba Mais",
+            linkUrl: "#",
+            theme: "blue",
+          },
+          {
+            icon: "cloud_sync",
+            badge: "BTP",
+            title: "Integração Cloud (BTP)",
+            description:
+              "Conecte perfeitamente seus sistemas locais e em nuvem usando a SAP Business Technology Platform. Construímos fluxos de integração e extensões robustas para preparar sua arquitetura para o futuro.",
+            linkText: "Saiba Mais",
+            linkUrl: "#",
+            theme: "cyan",
+          },
+        ],
+      },
+      cta: {
+        title: "Pronto para Transformar?",
+        description:
+          "Vamos discutir como nossa experiência em SAP pode impulsionar seus negócios. Entre em contato com nossa equipe hoje.",
+        primaryBtnText: "Inicie seu Projeto",
+        secondaryBtnText: "Contatar Vendas",
       },
     },
   },
