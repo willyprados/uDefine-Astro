@@ -1,11 +1,41 @@
 // src/i18n/ui.ts
 
 export const languages = {
-  en: { label: "English", flag: "🇺🇸", path: "en" },
-  es: { label: "Español", flag: "🇪🇸", path: "es" },
-  de: { label: "Deutsch", flag: "🇩🇪", path: "de" },
-  it: { label: "Italiano", flag: "🇮🇹", path: "it" },
-  pt: { label: "Português", flag: "🇵🇹", path: "pt" },
+  en: {
+    label: "English",
+    flag: "🇺🇸",
+    path: "en",
+    description:
+      "Expert SAP Fiori development and strategic consulting. uDefine empowers your enterprise with modern UX, S/4HANA migrations, and custom cloud solutions.",
+  },
+  es: {
+    label: "Español",
+    flag: "🇪🇸",
+    path: "es",
+    description:
+      "Desarrollo experto en SAP Fiori y consultoría estratégica. uDefine potencia tu empresa con UX moderna, migraciones a S/4HANA y soluciones cloud.",
+  },
+  de: {
+    label: "Deutsch",
+    flag: "🇩🇪",
+    path: "de",
+    description:
+      "Experten für SAP Fiori-Entwicklung und strategische Beratung. uDefine stärkt Ihr Unternehmen mit moderner UX, S/4HANA-Migrationen und Cloud-Lösungen.",
+  },
+  it: {
+    label: "Italiano",
+    flag: "🇮🇹",
+    path: "it",
+    description:
+      "Sviluppo esperto SAP Fiori e consulenza strategica. uDefine potenzia la tua azienda con UX moderna, migrazioni S/4HANA e soluzioni cloud su misura.",
+  },
+  pt: {
+    label: "Português",
+    flag: "🇵🇹",
+    path: "pt",
+    description:
+      "Desenvolvimento especialista em SAP Fiori e consultoria. A uDefine impulsiona sua empresa com UX moderna, migrações S/4HANA e soluções cloud.",
+  },
 };
 
 export const defaultLang = "es";

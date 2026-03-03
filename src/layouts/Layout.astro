@@ -2,22 +2,21 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ui } from "../i18n/ui";
-// src/layouts/Layout.astro
-import "../styles/global.css"; // <--- ¡ESTA LÍNEA ES LA CLAVE!
+import "../styles/global.css";
 interface Props {
   title: string;
-  // Necesitamos pasar el idioma al layout para que header/footer funcionen
+  description: string;
   lang?: string;
 }
 
 // Obtenemos el idioma de la URL o usamos 'es' por defecto
-const { lang = "es", title } = Astro.props;
+const { lang = "es", title, description } = Astro.props;
 
 // Obtenemos los textos traducidos para Header y Footer
-const t = ui[lang] || ui.es;
-// src/layouts/Layout.astro
+const t = ui[lang as keyof typeof ui] || ui.es;
 interface Props {
   title: string;
+  description: string;
 }
 ---
 
@@ -26,6 +25,7 @@ interface Props {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
