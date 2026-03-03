@@ -1,5 +1,13 @@
 ---
+// 1. OBLIGATORIO: Le decimos al Picker que debe recibir el idioma como Prop
+interface Props {
+  lang: string;
+}
+
+// 2. Extraemos el idioma exacto que nos envía el Header
+const { lang: activeLocale } = Astro.props;
 const pathname = Astro.url.pathname;
+
 const languages = [
   { code: "en", label: "English", flag: "🇺🇸" },
   { code: "es", label: "Español", flag: "🇪🇸" },
@@ -8,15 +16,13 @@ const languages = [
   { code: "pt", label: "Português", flag: "🇵🇹" },
 ];
 
-const firstSegment = pathname.split("/")[1];
 const supportedLocales = languages.map((l) => l.code);
-const activeLocale =
-  Astro.currentLocale ||
-  (supportedLocales.includes(firstSegment) ? firstSegment : "en");
 
+// 3. Buscamos el idioma basado 100% en la propiedad activa
 const currentLang =
-  languages.find((lang) => lang.code === activeLocale) || languages[0];
+  languages.find((l) => l.code === activeLocale) || languages[1]; // Fallback a es (índice 1)
 
+// Función para mantener la URL pero cambiar el idioma
 const getPathForLocale = (targetLocale: string) => {
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length > 0 && supportedLocales.includes(segments[0])) {
@@ -31,11 +37,11 @@ const getPathForLocale = (targetLocale: string) => {
 <div class="relative inline-block text-left" id="language-selector">
   <button
     id="dropdown-button"
-    class="flex items-center gap-0 px-2 py-1.5 text-slate-200 rounded-md hover:bg-slate-800 transition-colors border border-transparent focus:border-slate-700 focus:outline-none"
+    class="flex items-center gap-1 px-3 py-2 text-slate-200 rounded-md hover:bg-slate-800 transition-colors border border-transparent focus:outline-none"
     aria-haspopup="true"
     aria-expanded="false"
   >
-    <span id="active-flag" class="text-lg">{currentLang.flag}</span>
+    <span class="text-lg">{currentLang.flag}</span>
 
     <svg
       class="w-4 h-4 text-slate-400"
@@ -57,23 +63,24 @@ const getPathForLocale = (targetLocale: string) => {
   >
     <ul role="menu">
       {
-        languages.map((lang) => (
+        languages.map((localeOption) => (
           <li role="menuitem">
             <a
-              href={getPathForLocale(lang.code)}
-              data-flag={lang.flag}
-              class={`lang-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-slate-700/50 transition-colors ${
-                activeLocale === lang.code
-                  ? "text-blue-500 bg-slate-800/30"
+              href={getPathForLocale(localeOption.code)}
+              onclick={`localStorage.setItem('preferred-lang', '${localeOption.code}')`}
+              class={`flex items-center gap-3 px-4 py-2 text-sm hover:bg-slate-700/50 transition-colors ${
+                activeLocale === localeOption.code
+                  ? "text-primary bg-primary/10"
                   : "text-slate-300"
               }`}
             >
-              <span class="text-lg">{lang.flag}</span>
-              <span class="flex-1">{lang.label}</span>
+              <span class="text-lg">{localeOption.flag}</span>
+              <span class="flex-1">{localeOption.label}</span>
 
-              {activeLocale === lang.code && (
+              {/* Checkmark para el idioma activo */}
+              {activeLocale === localeOption.code && (
                 <svg
-                  class="w-4 h-4 text-blue-500"
+                  class="w-4 h-4 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -95,48 +102,34 @@ const getPathForLocale = (targetLocale: string) => {
 </div>
 
 <script>
-  const setupDropdown = () => {
+  // Script limpio y seguro para Astro ViewTransitions
+  function initLanguagePicker() {
     const button = document.getElementById("dropdown-button");
     const menu = document.getElementById("dropdown-menu");
-    const activeFlag = document.getElementById("active-flag");
-    const langOptions = document.querySelectorAll(".lang-option");
 
     if (!button || !menu) return;
 
-    // Abrir/Cerrar menú
-    button.addEventListener("click", (e) => {
+    // Usamos onclick para garantizar que el evento no se acumule/duplique al cambiar de página
+    button.onclick = (e) => {
       e.stopPropagation();
       menu.classList.toggle("hidden");
       const isExpanded = !menu.classList.contains("hidden");
       button.setAttribute("aria-expanded", isExpanded.toString());
-    });
+    };
 
-    // MEJORA 2: Cambiar la bandera instantáneamente al hacer clic
-    langOptions.forEach((option) => {
-      option.addEventListener("click", (e) => {
-        // Obtenemos la bandera del atributo data-flag que pusimos en el HTML
-        const newFlag = (e.currentTarget as HTMLElement).getAttribute(
-          "data-flag",
-        );
-        if (activeFlag && newFlag) {
-          activeFlag.textContent = newFlag; // Cambiamos la bandera visualmente al instante
-        }
-        menu.classList.add("hidden"); // Cerramos el menú
-      });
-    });
-
-    // Cerrar al hacer clic fuera
-    document.addEventListener("click", (event) => {
-      if (
-        !button.contains(event.target as Node) &&
-        !menu.contains(event.target as Node)
-      ) {
+    // Función para cerrar al hacer clic fuera
+    const closeMenu = (e) => {
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.add("hidden");
         button.setAttribute("aria-expanded", "false");
       }
-    });
-  };
+    };
 
-  setupDropdown();
-  document.addEventListener("astro:page-load", setupDropdown);
+    // Removemos el evento anterior (si existía) y añadimos el nuevo
+    document.removeEventListener("click", closeMenu);
+    document.addEventListener("click", closeMenu);
+  }
+
+  // Inicializar al cargar y al cambiar de página
+  document.addEventListener("astro:page-load", initLanguagePicker);
 </script>

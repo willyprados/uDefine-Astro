@@ -1,0 +1,62 @@
+---
+// src/pages/[lang]/404.astro
+import Layout from "../../layouts/Layout.astro";
+import { ui, languages } from "../../i18n/ui";
+
+// Generamos las rutas para todos los idiomas
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "de" } },
+    { params: { lang: "it" } },
+    { params: { lang: "pt" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = ui[lang] || ui.es;
+const notFoundT = t.notFound;
+---
+
+<Layout
+  title={notFoundT.pageTitle}
+  lang={lang}
+  description={notFoundT.description}
+>
+  <section
+    class="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center bg-bg-main transition-colors duration-300"
+  >
+    <div class="relative mb-8 mt-10">
+      <h1
+        class="text-[120px] md:text-[200px] font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500 leading-none drop-shadow-2xl select-none"
+      >
+        404
+      </h1>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/20 blur-[100px] -z-10 rounded-full"
+      >
+      </div>
+    </div>
+
+    <h2
+      class="text-3xl md:text-5xl font-bold text-text-main mb-6 transition-colors duration-300"
+    >
+      {notFoundT.title}
+    </h2>
+
+    <p
+      class="text-text-muted text-lg max-w-[500px] mb-10 transition-colors duration-300 leading-relaxed"
+    >
+      {notFoundT.description}
+    </p>
+
+    <a
+      href={`/${lang}`}
+      class="flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-white font-bold text-lg hover:bg-blue-600 shadow-[0_0_30px_rgba(19,109,236,0.4)] hover:-translate-y-1 transition-all duration-300"
+    >
+      <span class="material-symbols-outlined">home</span>
+      {notFoundT.button}
+    </a>
+  </section>
+</Layout>

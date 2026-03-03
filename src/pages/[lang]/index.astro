@@ -24,6 +24,7 @@ const homeT = t.home;
 ---
 
 <Layout
+  lang={lang}
   title={`uDefine Consulting | ${languages[lang as keyof typeof languages]?.label || "Home"}`}
   description={languages[lang as keyof typeof languages]?.description ||
     "Desarrollo experto en SAP Fiori y consultoría estratégica. uDefine potencia tu empresa con UX moderna, migraciones a S/4HANA y soluciones cloud."}

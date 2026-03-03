@@ -409,6 +409,13 @@ export const ui = {
         secondaryBtnText: "Contact Sales",
       },
     },
+    notFound: {
+      pageTitle: "404 - Page Not Found",
+      title: "Oops! Page not found",
+      description:
+        "It seems you're lost in the digital space. The page you are looking for does not exist or has been moved.",
+      button: "Back to Home",
+    },
   },
   es: {
     nav: {
@@ -776,6 +783,13 @@ export const ui = {
         secondaryBtnText: "Contactar Ventas",
       },
     },
+    notFound: {
+      pageTitle: "404 - Página no encontrada",
+      title: "¡Ups! Página no encontrada",
+      description:
+        "Parece que te has perdido en el espacio digital. La página que buscas no existe o ha sido movida.",
+      button: "Volver al Inicio",
+    },
   },
   de: {
     nav: {
@@ -1122,6 +1136,13 @@ export const ui = {
         primaryBtnText: "Projekt starten",
         secondaryBtnText: "Vertrieb kontaktieren",
       },
+    },
+    notFound: {
+      pageTitle: "404 - Seite nicht gefunden",
+      title: "Hoppla! Seite nicht gefunden",
+      description:
+        "Es scheint, als hätten Sie sich im digitalen Raum verirrt. Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.",
+      button: "Zurück zur Startseite",
     },
   },
 
@@ -1471,6 +1492,13 @@ export const ui = {
         secondaryBtnText: "Contatta le Vendite",
       },
     },
+    notFound: {
+      pageTitle: "404 - Pagina non trovata",
+      title: "Ops! Pagina non trovata",
+      description:
+        "Sembra che tu ti sia perso nello spazio digitale. La pagina che stai cercando non esiste o è stata spostata.",
+      button: "Torna alla Home",
+    },
   },
 
   pt: {
@@ -1818,6 +1846,13 @@ export const ui = {
         primaryBtnText: "Inicie seu Projeto",
         secondaryBtnText: "Contatar Vendas",
       },
+    },
+    notFound: {
+      pageTitle: "404 - Página não encontrada",
+      title: "Ops! Página não encontrada",
+      description:
+        "Parece que você se perdeu no espaço digital. A página que você está procurando não existe ou foi movida.",
+      button: "Voltar para o Início",
     },
   },
 } as const;

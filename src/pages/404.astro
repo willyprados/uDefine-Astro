@@ -1,0 +1,88 @@
+---
+// src/pages/404.astro
+// Enrutador inteligente para errores 404
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script is:inline>
+      const path = window.location.pathname;
+      const segments = path.split("/").filter(Boolean);
+      const firstSegment = segments[0];
+
+      const supportedLangs = ["en", "es", "de", "it", "pt"];
+
+      // Función para detectar el mejor idioma posible
+      function detectBestLanguage() {
+        // 1. Si la URL ya tiene un idioma válido (ej: /en/pagina-falsa)
+        if (supportedLangs.includes(firstSegment)) {
+          return firstSegment;
+        }
+
+        // 2. Si venía de otra página de nuestro propio sitio (ej: hizo clic en un enlace roto desde la versión en inglés)
+        const referrer = document.referrer;
+        if (referrer) {
+          try {
+            const refUrl = new URL(referrer);
+            if (refUrl.hostname === window.location.hostname) {
+              const refSegments = refUrl.pathname.split("/").filter(Boolean);
+              if (supportedLangs.includes(refSegments[0])) {
+                return refSegments[0];
+              }
+            }
+          } catch (e) {}
+        }
+
+        // 3. Si habíamos guardado su preferencia en localStorage previamente
+        const storedLang = localStorage.getItem("preferred-lang");
+        if (storedLang && supportedLangs.includes(storedLang)) {
+          return storedLang;
+        }
+
+        // 4. Leer el idioma preferido de su navegador (ej: si su Chrome está en Alemán)
+        const browserLang = navigator.language.slice(0, 2);
+        if (supportedLangs.includes(browserLang)) {
+          return browserLang;
+        }
+
+        // 5. Último recurso absoluto de seguridad (puedes poner 'en' o 'es')
+        return "en";
+      }
+
+      const finalLang = detectBestLanguage();
+
+      // Redirección inmediata al 404 correcto
+      window.location.href = `/${finalLang}/404`;
+    </script>
+
+    <style>
+      body {
+        background-color: #0b1016;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .loader {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        border-top-color: #136dec;
+        animation: spin 1s ease-in-out infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+  </body>
+</html>

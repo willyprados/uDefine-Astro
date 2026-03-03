@@ -10,7 +10,7 @@ interface Props {
   titlePre?: string;
   titleHighlight?: string;
   description?: string;
-  features?: Feature[];
+  features?: readonly Feature[];
 }
 
 const {
@@ -80,7 +80,8 @@ const {
                     >
                       <span
                         class="material-symbols-outlined text-white text-sm font-bold"
-                        >widgets</span>
+                        >widgets</span
+                      >
                     </div>
                     <h1 class="text-white font-bold text-lg tracking-tight">
                       Fiori App
@@ -184,7 +185,8 @@ const {
                       class="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-primary border border-blue-500/20"
                     >
                       <span class="material-symbols-outlined text-xl"
-                        >shopping_cart</span>
+                        >shopping_cart</span
+                      >
                     </div>
                     <div class="flex-1 min-w-0">
                       <h3 class="text-white text-sm font-bold truncate">
@@ -204,7 +206,8 @@ const {
                       class="size-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 text-purple-400 border border-purple-500/20"
                     >
                       <span class="material-symbols-outlined text-xl"
-                        >flight</span>
+                        >flight</span
+                      >
                     </div>
                     <div class="flex-1 min-w-0">
                       <h3 class="text-white text-sm font-bold truncate">

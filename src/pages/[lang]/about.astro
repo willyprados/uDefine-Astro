@@ -20,11 +20,14 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = ui[lang as keyof typeof ui] || ui.es;
-const about = t.about; // Atajo para la sección about
+const about = t.about;
 ---
 
 <Layout
-  title={`uDefine - ${languages[lang as keyof typeof languages]?.label || "Consulting"}`}
+  lang={lang}
+  title={`uDefine Consulting | ${languages[lang as keyof typeof languages]?.label || "About Us"}`}
+  description={languages[lang as keyof typeof languages]?.description ||
+    "Desarrollo experto en SAP Fiori y consultoría estratégica. uDefine potencia tu empresa con UX moderna, migraciones a S/4HANA y soluciones cloud."}
 >
   <Hero
     title={about.hero.title}

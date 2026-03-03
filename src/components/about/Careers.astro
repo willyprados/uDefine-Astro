@@ -2,7 +2,7 @@
 interface Props {
   title?: string;
   description?: string;
-  checklist?: string[];
+  checklist?: readonly string[];
   ctaText?: string;
   ctaLink?: string;
 }
@@ -12,7 +12,7 @@ const {
   description = "Attention all job seekers! Our company is growing and we are on the lookout for talented individuals to join our team. If you are a hardworking, motivated professional with a passion for excellence, we want to hear from you! We offer a challenging and rewarding work environment, competitive compensation packages, and opportunities for growth.",
   checklist = ["Already a SAP Professional?", "Motivated Graduate?"],
   ctaText = "Want to know more?",
-  ctaLink = "/contact", // Puedes cambiar esto por mailto:correo@udefine.com
+  ctaLink = "/contact",
 } = Astro.props;
 ---
 
