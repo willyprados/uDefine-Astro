@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { lang, navData } = Astro.props;
+
+// Enlaces con sus rutas adaptadas al idioma activo
 const links = [
   { name: navData.home, href: `/${lang}` },
   { name: navData.about, href: `/${lang}/about` },
@@ -18,26 +20,35 @@ const links = [
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 bg-[#111822]/90 backdrop-blur-md border-b border-white/5"
+  class="fixed top-0 left-0 right-0 z-50 bg-bg-main/90 backdrop-blur-md border-b border-border-base transition-colors duration-300"
 >
   <div class="layout-container flex justify-center w-full">
     <div
       class="flex max-w-[1280px] flex-1 items-center justify-between px-6 py-4 lg:px-10"
     >
-      <div class="flex items-center gap-2 text-white cursor-pointer group">
+      <a
+        href={`/${lang}`}
+        class="flex items-center gap-2 text-text-main cursor-pointer group relative z-50"
+      >
         <h2
-          class="text-white text-xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors"
+          class="text-xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors"
         >
           uDefine
         </h2>
-      </div>
+      </a>
 
-      <div class="hidden lg:flex items-center gap-4">
-        <nav class="flex items-center gap-8">
+      <div
+        id="nav-container"
+        class="fixed inset-0 top-[65px] h-[calc(100vh-65px)] w-full bg-bg-main flex flex-col items-center pt-10 gap-8 transform translate-x-full transition-transform duration-300 overflow-y-auto z-40
+               lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:flex-row lg:translate-x-0 lg:pt-0 lg:gap-4 lg:overflow-visible lg:flex"
+      >
+        <nav
+          class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 w-full lg:w-auto"
+        >
           {
             links.map((link) => (
               <a
-                class="text-sm font-medium text-slate-300 hover:text-white hover:shadow-[0_2px_0_0_#136dec] transition-all pb-1"
+                class="nav-link text-xl lg:text-sm font-medium text-text-muted hover:text-text-main lg:hover:shadow-[0_2px_0_0_#136dec] transition-all pb-1"
                 href={link.href}
               >
                 {link.name}
@@ -45,22 +56,84 @@ const links = [
             ))
           }
         </nav>
-        <div class="h-4 w-px bg-text-main/20"></div>
 
-        <ThemeToggle />
+        <div class="hidden lg:block h-4 w-px bg-border-base"></div>
 
-        <Picker lang={lang} />
-
-        <button
-          class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-[0_0_20px_rgba(19,109,236,0.4)] hover:shadow-[0_0_30px_rgba(19,109,236,0.6)] transition-all duration-300"
+        <div
+          class="flex items-center justify-center gap-8 lg:gap-4 mt-auto lg:mt-0 pt-8 lg:pt-0 border-t border-border-base lg:border-none w-10/12 lg:w-auto"
         >
-          <span class="truncate">Get Started</span>
-        </button>
+          <ThemeToggle />
+          <Picker lang={lang} />
+        </div>
+
+        <a
+          href={`/${lang}/contact`}
+          class="nav-link flex cursor-pointer items-center justify-center rounded-lg h-14 w-10/12 lg:w-auto lg:h-10 px-8 lg:px-6 bg-primary hover:bg-blue-600 text-white text-lg lg:text-xs font-bold shadow-[0_0_20px_rgba(19,109,236,0.4)] hover:-translate-y-1 transition-all duration-300 mb-10 lg:mb-0 lg:ml-2"
+        >
+          Get Started
+        </a>
       </div>
 
-      <button class="lg:hidden text-white" aria-label="Abrir menú">
-        <span class="material-symbols-outlined">menu</span>
+      <button
+        id="mobile-menu-toggle"
+        class="lg:hidden text-text-main hover:text-primary transition-colors relative z-50 flex items-center justify-center"
+        aria-label="Abrir menú"
+      >
+        <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl"
+          >menu</span
+        >
       </button>
     </div>
   </div>
 </header>
+
+<script>
+  function initMobileNav() {
+    const toggleBtn = document.getElementById("mobile-menu-toggle");
+    const icon = document.getElementById("mobile-menu-icon");
+    const navContainer = document.getElementById("nav-container");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    if (!toggleBtn || !icon || !navContainer) return;
+
+    let isMenuOpen = false;
+
+    // Función para abrir/cerrar menú
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        // Abrir menú
+        navContainer.classList.remove("translate-x-full");
+        navContainer.classList.add("translate-x-0");
+        icon.textContent = "close"; // Cambia el icono a la "X"
+        document.body.style.overflow = "hidden"; // Evita el scroll del body
+      } else {
+        // Cerrar menú
+        navContainer.classList.add("translate-x-full");
+        navContainer.classList.remove("translate-x-0");
+        icon.textContent = "menu"; // Vuelve al icono hamburguesa
+        document.body.style.overflow = ""; // Restaura el scroll
+      }
+    };
+
+    // Usamos onclick para prevenir duplicidad de eventos al usar Astro Transitions
+    toggleBtn.onclick = toggleMenu;
+
+    // Cierra el menú automáticamente cuando se hace clic en un enlace
+    navLinks.forEach((link) => {
+      (link as HTMLElement).onclick = () => {
+        if (isMenuOpen) toggleMenu();
+      };
+    });
+
+    // Seguro por si el usuario redimensiona la pantalla (gira el móvil o tablet)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024 && isMenuOpen) {
+        toggleMenu(); // Cierra el menú forzadamente en escritorio
+      }
+    });
+  }
+
+  // Inicializar en primera carga y en cada navegación de Astro
+  document.addEventListener("astro:page-load", initMobileNav);
+</script>
