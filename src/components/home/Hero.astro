@@ -21,11 +21,11 @@ const {
 ---
 
 <section
-  class="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 py-20"
+  class="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 py-20 bg-bg-main transition-colors duration-300"
 >
   <div class="absolute inset-0 z-0">
     <div
-      class="absolute inset-0 bg-gradient-to-b from-[#111822]/30 via-[#111822]/80 to-[#0b1016] z-10"
+      class="absolute inset-0 bg-gradient-to-b from-bg-main/30 via-bg-main/80 to-bg-main z-10 transition-colors duration-300"
     >
     </div>
 
@@ -57,7 +57,7 @@ const {
     </div>
 
     <h1
-      class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl"
+      class="text-text-main text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-2xl transition-colors duration-300"
     >
       {titlePre}
       <span
@@ -68,7 +68,7 @@ const {
     </h1>
 
     <h2
-      class="max-w-[700px] text-slate-300 text-lg md:text-xl font-normal leading-relaxed"
+      class="max-w-[700px] text-text-muted text-lg md:text-xl font-normal leading-relaxed transition-colors duration-300"
     >
       {subtitle}
     </h2>
@@ -79,15 +79,18 @@ const {
       >
         {btnOne}
       </button>
+
       <button
-        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-[#1a2332] hover:bg-[#233348] border border-white/10 text-white text-base font-bold transition-all duration-300"
+        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-bg-card hover:bg-border-base border border-border-base text-text-main text-base font-bold transition-all duration-300"
       >
         {btnTwo}
       </button>
     </div>
   </div>
 
-  <div class="absolute bottom-10 animate-bounce text-white/30">
+  <div
+    class="absolute bottom-10 animate-bounce text-text-muted/50 transition-colors duration-300"
+  >
     <span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
   </div>
 </section>

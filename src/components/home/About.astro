@@ -17,7 +17,7 @@ const imageSrc =
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop";
 ---
 
-<section class="py-20 px-4 lg:px-40 bg-background-dark">
+<section class="py-20 px-4 lg:px-40 bg-bg-main transition-colors duration-300">
   <div
     class="layout-content-container mx-auto flex max-w-[1100px] flex-col gap-16"
   >
@@ -25,14 +25,16 @@ const imageSrc =
       <h2 class="text-primary text-sm font-bold uppercase tracking-widest">
         {title}
       </h2>
-      <h1 class="text-white text-3xl md:text-4xl font-bold max-w-[720px]">
+      <h1
+        class="text-text-main text-3xl md:text-4xl font-bold max-w-[720px] transition-colors duration-300"
+      >
         {subTitle}
       </h1>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div
-        class="relative group rounded-xl overflow-hidden border border-white/10 shadow-2xl"
+        class="relative group rounded-xl overflow-hidden border border-border-base shadow-2xl transition-colors duration-300"
       >
         <div
           class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
@@ -56,15 +58,18 @@ const imageSrc =
                   <span class="material-symbols-outlined text-primary text-3xl">
                     {feature.icon}
                   </span>
-                  <h3 class="text-white text-xl font-bold">{feature.title}</h3>
+                  <h3 class="text-text-main text-xl font-bold transition-colors duration-300">
+                    {feature.title}
+                  </h3>
                 </div>
-                <p class="text-slate-400 leading-relaxed">
+                <p class="text-text-muted leading-relaxed transition-colors duration-300">
                   {feature.description}
                 </p>
               </div>
+
               {/* Divisor solo entre elementos, no al final */}
               {index !== features.length - 1 && (
-                <div class="w-full h-px bg-white/5" />
+                <div class="w-full h-px bg-border-base transition-colors duration-300" />
               )}
             </>
           ))

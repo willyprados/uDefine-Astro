@@ -17,24 +17,38 @@ const { badge, title, desc, location, phone, email, social } = Astro.props;
     <span class="text-primary font-bold tracking-widest uppercase text-sm"
       >{badge}</span
     >
-    <h2 class="text-4xl font-bold text-white">{title}</h2>
-    <p class="text-slate-400 text-lg leading-relaxed">{desc}</p>
+    <h2
+      class="text-4xl font-bold text-text-main transition-colors duration-300"
+    >
+      {title}
+    </h2>
+    <p
+      class="text-text-muted text-lg leading-relaxed transition-colors duration-300"
+    >
+      {desc}
+    </p>
   </div>
 
   <div class="grid gap-8">
     <div
-      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-border-base hover:bg-text-main/5 transition-all duration-300"
     >
       <div
-        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20 transition-colors duration-300"
       >
         <span class="material-symbols-outlined text-primary text-2xl"
           >location_on</span
         >
       </div>
       <div>
-        <h4 class="text-white font-bold text-lg mb-1">{location}</h4>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <h4
+          class="text-text-main font-bold text-lg mb-1 transition-colors duration-300"
+        >
+          {location}
+        </h4>
+        <p
+          class="text-text-muted text-sm leading-relaxed transition-colors duration-300"
+        >
           Avenida de Roma, 119, Escalera B, Entlo. Plta 1ª<br />
           Barcelona, Catalonia 08011, ES
         </p>
@@ -42,38 +56,46 @@ const { badge, title, desc, location, phone, email, social } = Astro.props;
     </div>
 
     <div
-      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-border-base hover:bg-text-main/5 transition-all duration-300"
     >
       <div
-        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20 transition-colors duration-300"
       >
         <span class="material-symbols-outlined text-primary text-2xl"
           >phone</span
         >
       </div>
       <div>
-        <h4 class="text-white font-bold text-lg mb-1">{phone}</h4>
+        <h4
+          class="text-text-main font-bold text-lg mb-1 transition-colors duration-300"
+        >
+          {phone}
+        </h4>
         <a
-          class="text-primary hover:text-white transition-colors"
+          class="text-primary hover:text-text-main transition-colors duration-300"
           href="tel:+346001234567">+34 600 123 4567</a
         >
       </div>
     </div>
 
     <div
-      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/5 transition-all duration-300"
+      class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-border-base hover:bg-text-main/5 transition-all duration-300"
     >
       <div
-        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20"
+        class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20 transition-colors duration-300"
       >
         <span class="material-symbols-outlined text-primary text-2xl"
           >alternate_email</span
         >
       </div>
       <div>
-        <h4 class="text-white font-bold text-lg mb-1">{email}</h4>
+        <h4
+          class="text-text-main font-bold text-lg mb-1 transition-colors duration-300"
+        >
+          {email}
+        </h4>
         <a
-          class="text-primary hover:text-white transition-colors"
+          class="text-primary hover:text-text-main transition-colors duration-300"
           href="mailto:hello@udefine.net">hello@udefine.net</a
         >
       </div>
@@ -81,36 +103,42 @@ const { badge, title, desc, location, phone, email, social } = Astro.props;
   </div>
 
   <div
-    class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+    class="h-px w-full bg-gradient-to-r from-transparent via-border-base to-transparent transition-colors duration-300"
   >
   </div>
 
   <div class="flex flex-col gap-4">
-    <span class="text-slate-500 text-sm font-medium">{social}</span>
+    <span
+      class="text-text-muted text-sm font-medium transition-colors duration-300"
+      >{social}</span
+    >
     <div class="flex gap-4">
       <a
-        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all group"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-text-main/5 hover:bg-text-main/10 border border-border-base hover:border-primary/30 transition-all group duration-300"
         href="https://www.linkedin.com/company/udefine/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span class="text-slate-300 group-hover:text-white font-medium text-sm"
+        <span
+          class="text-text-muted group-hover:text-text-main font-medium text-sm transition-colors duration-300"
           >LinkedIn</span
         >
         <span
-          class="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm"
+          class="material-symbols-outlined text-text-muted group-hover:text-primary text-sm transition-colors duration-300"
           >arrow_outward</span
         >
       </a>
+
       <a
-        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-primary/30 transition-all group"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-text-main/5 hover:bg-text-main/10 border border-border-base hover:border-primary/30 transition-all group duration-300"
         href="#"
       >
-        <span class="text-slate-300 group-hover:text-white font-medium text-sm"
+        <span
+          class="text-text-muted group-hover:text-text-main font-medium text-sm transition-colors duration-300"
           >Twitter</span
         >
         <span
-          class="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm"
+          class="material-symbols-outlined text-text-muted group-hover:text-primary text-sm transition-colors duration-300"
           >arrow_outward</span
         >
       </a>

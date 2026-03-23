@@ -18,20 +18,26 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-24 px-4 relative overflow-hidden">
+<section
+  class="py-24 px-4 relative overflow-hidden bg-bg-main transition-colors duration-300"
+>
   <div
-    class="absolute inset-0 bg-gradient-to-r from-primary/10 to-blue-900/20 z-0 pointer-events-none"
+    class="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 z-0 pointer-events-none transition-colors duration-300"
   >
   </div>
 
   <div
     class="layout-content-container mx-auto flex max-w-[800px] flex-col items-center gap-8 text-center relative z-10"
   >
-    <h1 class="text-white text-4xl md:text-5xl font-black leading-tight">
+    <h1
+      class="text-text-main text-4xl md:text-5xl font-black leading-tight transition-colors duration-300"
+    >
       {title}
     </h1>
 
-    <p class="text-slate-300 text-lg max-w-[600px]">
+    <p
+      class="text-text-muted text-lg max-w-[600px] transition-colors duration-300"
+    >
       {subtitle}
     </p>
 
@@ -45,7 +51,7 @@ const {
 
       <a
         href={linkSecondary}
-        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-transparent border border-white/20 hover:bg-white/5 text-white text-lg font-bold transition-all duration-300 hover:-translate-y-1"
+        class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-transparent border border-border-base hover:bg-text-main/5 text-text-main text-lg font-bold transition-all duration-300 hover:-translate-y-1"
       >
         {btnSecondary}
       </a>

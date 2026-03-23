@@ -35,26 +35,32 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="bg-[#05080c] border-t border-white/5 pt-16 pb-8 px-4 lg:px-10 text-white"
+  class="bg-bg-main border-t border-border-base pt-16 pb-8 px-4 lg:px-10 transition-colors duration-300"
 >
   <div class="layout-container mx-auto max-w-[1280px]">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
       <div class="col-span-1 md:col-span-1 flex flex-col gap-4">
         <div class="flex items-center gap-2">
-          <h2 class="text-lg font-bold">uDefine</h2>
+          <h2
+            class="text-lg font-bold text-text-main transition-colors duration-300"
+          >
+            uDefine
+          </h2>
         </div>
-        <p class="text-slate-500 text-sm leading-relaxed">
+        <p
+          class="text-text-muted text-sm leading-relaxed transition-colors duration-300"
+        >
           {content.description}
         </p>
         <div class="flex gap-4 mt-2">
           <a
-            class="text-slate-400 hover:text-primary transition-colors"
+            class="text-text-muted hover:text-primary transition-colors duration-300"
             href="#"
           >
             <span class="text-sm font-medium">LinkedIn</span>
           </a>
           <a
-            class="text-slate-400 hover:text-primary transition-colors"
+            class="text-text-muted hover:text-primary transition-colors duration-300"
             href="#"
           >
             <span class="text-sm font-medium">Twitter</span>
@@ -63,13 +69,17 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div>
-        <h3 class="text-white font-bold mb-4">{content.headers.services}</h3>
-        <ul class="flex flex-col gap-2 text-sm text-slate-400">
+        <h3
+          class="text-text-main font-bold mb-4 transition-colors duration-300"
+        >
+          {content.headers.services}
+        </h3>
+        <ul class="flex flex-col gap-2 text-sm text-text-muted">
           {
             content.servicesLinks.map((link) => (
               <li>
                 <a
-                  class="hover:text-primary transition-colors"
+                  class="hover:text-primary transition-colors duration-300"
                   href={`/${lang}${link.href}`}
                 >
                   {link.label}
@@ -81,13 +91,17 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div>
-        <h3 class="text-white font-bold mb-4">{content.headers.company}</h3>
-        <ul class="flex flex-col gap-2 text-sm text-slate-400">
+        <h3
+          class="text-text-main font-bold mb-4 transition-colors duration-300"
+        >
+          {content.headers.company}
+        </h3>
+        <ul class="flex flex-col gap-2 text-sm text-text-muted">
           {
             content.companyLinks.map((link) => (
               <li>
                 <a
-                  class="hover:text-primary transition-colors"
+                  class="hover:text-primary transition-colors duration-300"
                   href={`/${lang}${link.href}`}
                 >
                   {link.label}
@@ -99,27 +113,31 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div>
-        <h3 class="text-white font-bold mb-4">{content.headers.contact}</h3>
-        <ul class="flex flex-col gap-3 text-sm text-slate-400">
-          <li class="flex items-start gap-2">
+        <h3
+          class="text-text-main font-bold mb-4 transition-colors duration-300"
+        >
+          {content.headers.contact}
+        </h3>
+        <ul class="flex flex-col gap-3 text-sm text-text-muted">
+          <li class="flex items-start gap-2 transition-colors duration-300">
             <span
               class="material-symbols-outlined text-primary text-base mt-0.5"
               >location_on</span
             >
             <span set:html={content.contactInfo.address} />
           </li>
-          <li class="flex items-center gap-2">
+          <li class="flex items-center gap-2 transition-colors duration-300">
             <span class="material-symbols-outlined text-primary text-base"
               >email</span
             >
             <a
               href={`mailto:${content.contactInfo.email}`}
-              class="hover:text-white transition-colors"
+              class="hover:text-text-main transition-colors duration-300"
             >
               {content.contactInfo.email}
             </a>
           </li>
-          <li class="flex items-center gap-2">
+          <li class="flex items-center gap-2 transition-colors duration-300">
             <span class="material-symbols-outlined text-primary text-base"
               >call</span
             >
@@ -130,14 +148,18 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <div
-      class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+      class="border-t border-border-base pt-8 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors duration-300"
     >
-      <p class="text-slate-600 text-sm">
+      <p class="text-text-muted text-sm transition-colors duration-300">
         © {currentYear} uDefine Consulting. {content.legal.copyright}
       </p>
-      <div class="flex gap-6 text-sm text-slate-600">
-        <a class="hover:text-slate-400" href="#">{content.legal.privacy}</a>
-        <a class="hover:text-slate-400" href="#">{content.legal.terms}</a>
+      <div class="flex gap-6 text-sm text-text-muted">
+        <a class="hover:text-text-main transition-colors duration-300" href="#"
+          >{content.legal.privacy}</a
+        >
+        <a class="hover:text-text-main transition-colors duration-300" href="#"
+          >{content.legal.terms}</a
+        >
       </div>
     </div>
   </div>

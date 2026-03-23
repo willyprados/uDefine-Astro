@@ -16,7 +16,9 @@ interface Props {
 const { subTitle, title, studies = [] } = Astro.props;
 ---
 
-<section class="py-20 px-4 lg:px-40 bg-background-dark border-t border-white/5">
+<section
+  class="py-20 px-4 lg:px-40 bg-bg-main border-t border-border-base transition-colors duration-300"
+>
   <div
     class="layout-content-container mx-auto flex max-w-[1100px] flex-col gap-10"
   >
@@ -25,7 +27,9 @@ const { subTitle, title, studies = [] } = Astro.props;
         <h2 class="text-primary text-sm font-bold uppercase tracking-widest">
           {subTitle}
         </h2>
-        <h1 class="text-white text-3xl md:text-4xl font-bold">
+        <h1
+          class="text-text-main text-3xl md:text-4xl font-bold transition-colors duration-300"
+        >
           {title}
         </h1>
       </div>
@@ -33,14 +37,14 @@ const { subTitle, title, studies = [] } = Astro.props;
       <div class="hidden md:flex gap-2">
         <button
           id="scroll-left"
-          class="size-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer"
+          class="size-10 rounded-full border border-border-base flex items-center justify-center text-text-main hover:bg-border-base transition-colors duration-300 cursor-pointer"
           aria-label="Scroll left"
         >
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
         <button
           id="scroll-right"
-          class="size-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer"
+          class="size-10 rounded-full border border-border-base flex items-center justify-center text-text-main hover:bg-border-base transition-colors duration-300 cursor-pointer"
           aria-label="Scroll right"
         >
           <span class="material-symbols-outlined">arrow_forward</span>
@@ -54,7 +58,7 @@ const { subTitle, title, studies = [] } = Astro.props;
     >
       {
         studies.map((study) => (
-          <div class="flex min-w-[300px] md:min-w-[360px] flex-col gap-4 rounded-xl bg-background-card border border-white/5 p-4 snap-center hover:border-primary/30 transition-colors">
+          <div class="flex min-w-[300px] md:min-w-[360px] flex-col gap-4 rounded-xl bg-bg-card border border-border-base p-4 snap-center hover:border-primary/30 transition-colors duration-300">
             <div
               class="w-full aspect-video bg-cover bg-center rounded-lg relative overflow-hidden group"
               role="img"
@@ -66,16 +70,19 @@ const { subTitle, title, studies = [] } = Astro.props;
 
             <div class="flex flex-col gap-2 p-2">
               <div class="flex justify-between items-start">
-                <h3 class="text-white text-lg font-bold">{study.title}</h3>
-                <span class="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded">
+                <h3 class="text-text-main text-lg font-bold transition-colors duration-300">
+                  {study.title}
+                </h3>
+                <span class="text-xs font-medium bg-primary/10 border border-primary/20 text-primary px-2 py-1 rounded">
                   {study.category}
                 </span>
               </div>
-              <p class="text-slate-400 text-sm h-14 overflow-hidden">
+              <p class="text-text-muted text-sm h-14 overflow-hidden transition-colors duration-300">
                 {study.description}
               </p>
+
               <a
-                class="text-primary text-sm font-bold mt-2 flex items-center gap-1 hover:gap-2 transition-all"
+                class="text-primary text-sm font-bold mt-2 flex items-center gap-1 hover:gap-2 transition-all w-fit"
                 href={study.link}
               >
                 Read Story
@@ -92,18 +99,27 @@ const { subTitle, title, studies = [] } = Astro.props;
 </section>
 
 <script>
-  // Lógica simple para los botones de scroll
-  const container = document.getElementById("studies-container");
-  const leftBtn = document.getElementById("scroll-left");
-  const rightBtn = document.getElementById("scroll-right");
+  // Lógica para que las flechas desplacen el carrusel
+  function initCarousel() {
+    const container = document.getElementById("studies-container");
+    const btnLeft = document.getElementById("scroll-left");
+    const btnRight = document.getElementById("scroll-right");
 
-  if (container && leftBtn && rightBtn) {
-    leftBtn.addEventListener("click", () => {
-      container.scrollBy({ left: -400, behavior: "smooth" });
-    });
+    if (!container || !btnLeft || !btnRight) return;
 
-    rightBtn.addEventListener("click", () => {
-      container.scrollBy({ left: 400, behavior: "smooth" });
-    });
+    // Calculamos cuánto desplazar (el ancho de una tarjeta aprox)
+    const scrollAmount = 384;
+
+    // Removemos eventos previos para no duplicar al usar ViewTransitions
+    btnLeft.onclick = () => {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    };
+
+    btnRight.onclick = () => {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    };
   }
+
+  // Ejecutamos en la carga inicial y en cada navegación de Astro
+  document.addEventListener("astro:page-load", initCarousel);
 </script>
