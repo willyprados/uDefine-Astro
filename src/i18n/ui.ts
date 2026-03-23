@@ -47,6 +47,7 @@ export const ui = {
       about: "About",
       services: "Services",
       contact: "Contact",
+      btn: "Get Started",
     },
     footer: {
       description:
@@ -86,7 +87,8 @@ export const ui = {
         titleHighlight: "SAP Excellence",
         subtitle:
           "Expert Fiori Development & Strategic Consulting bridging the gap between complex backends and beautiful user experiences.",
-        cta: "Start Transformation",
+        btnOne: "Start Your Transformation",
+        btnTwo: "View Success Stories",
       },
       about: {
         subTitle: "About Us",
@@ -95,12 +97,14 @@ export const ui = {
           {
             icon: "psychology",
             title: "Design-Led Thinking",
-            description: "Prioritizing end-user experience.",
+            description:
+              "We prioritize the end-user experience in every SAP solution we build. By focusing on intuitive workflows, we reduce training time and increase user adoption across the enterprise.",
           },
           {
             icon: "terminal",
             title: "Technical Mastery",
-            description: "Deep expertise in ABAP, Fiori, UI5.",
+            description:
+              "Our team possesses deep expertise in ABAP, Fiori, UI5, and SAP Cloud Platform. We don't just design pretty screens; we engineer robust, scalable architectures.",
           },
         ],
       },
@@ -423,6 +427,7 @@ export const ui = {
       about: "Nosotros",
       services: "Servicios",
       contact: "Contacto",
+      btn: "Comenzar",
     },
     footer: {
       description:
@@ -463,6 +468,8 @@ export const ui = {
         subtitle:
           "Desarrollo Fiori experto y consultoría estratégica que une la brecha entre backends complejos y experiencias de usuario hermosas.",
         cta: "Empezar Transformación",
+        btnOne: "Inicia tu transformación",
+        btnTwo: "Ver casos de éxito",
       },
       about: {
         subTitle: "Nosotros",
@@ -470,13 +477,15 @@ export const ui = {
         features: [
           {
             icon: "psychology",
-            title: "Pensamiento de Diseño",
-            description: "Priorizamos la experiencia del usuario final.",
+            title: "Pensamiento centrado en el diseño",
+            description:
+              "Priorizamos la experiencia del usuario final en cada solución SAP que desarrollamos. Al enfocarnos en flujos de trabajo intuitivos, reducimos el tiempo de formación y aumentamos la adopción por parte de los usuarios en toda la empresa.",
           },
           {
             icon: "terminal",
-            title: "Maestría Técnica",
-            description: "Experiencia profunda en ABAP, Fiori, UI5.",
+            title: "Dominio técnico",
+            description:
+              "Nuestro equipo posee una profunda experiencia en ABAP, Fiori, UI5 y SAP Cloud Platform. No solo diseñamos interfaces atractivas; también desarrollamos arquitecturas robustas y escalables.",
           },
         ],
       },
@@ -797,6 +806,7 @@ export const ui = {
       about: "Über uns",
       services: "Dienstleistungen",
       contact: "Kontakt",
+      btn: "Loslegen",
     },
     footer: {
       description:
@@ -837,6 +847,8 @@ export const ui = {
         subtitle:
           "Experten für Fiori-Entwicklung und strategische Beratung, die die Lücke zwischen komplexen Backends und großartigen Nutzererlebnissen schließen.",
         cta: "Transformation starten",
+        btnOne: "Starten Sie Ihre Transformation",
+        btnTwo: "Erfolgsgeschichten ansehen",
       },
       about: {
         subTitle: "Über uns",
@@ -845,12 +857,14 @@ export const ui = {
           {
             icon: "psychology",
             title: "Designorientiertes Denken",
-            description: "Priorisierung der Endnutzererfahrung.",
+            description:
+              "Wir stellen die Endnutzererfahrung in jeder von uns entwickelten SAP-Lösung in den Mittelpunkt. Durch den Fokus auf intuitive Arbeitsabläufe reduzieren wir den Schulungsaufwand und steigern die Benutzerakzeptanz im gesamten Unternehmen.",
           },
           {
             icon: "terminal",
-            title: "Technische Meisterschaft",
-            description: "Tiefgehende Expertise in ABAP, Fiori, UI5.",
+            title: "Technische Exzellenz",
+            description:
+              "Unser Team verfügt über umfassende Expertise in ABAP, Fiori, UI5 und SAP Cloud Platform. Wir gestalten nicht nur ansprechende Oberflächen, sondern entwickeln auch robuste und skalierbare Architekturen.",
           },
         ],
       },
@@ -1152,6 +1166,7 @@ export const ui = {
       about: "Chi siamo",
       services: "Servizi",
       contact: "Contatto",
+      btn: "Inizia",
     },
     footer: {
       description:
@@ -1192,6 +1207,8 @@ export const ui = {
         subtitle:
           "Sviluppo Fiori esperto e consulenza strategica che colmano il divario tra backend complessi ed esperienze utente eccellenti.",
         cta: "Avvia trasformazione",
+        btnOne: "Inizia la tua trasformazione",
+        btnTwo: "Visualizza storie di successo",
       },
       about: {
         subTitle: "Chi siamo",
@@ -1199,13 +1216,15 @@ export const ui = {
         features: [
           {
             icon: "psychology",
-            title: "Pensiero guidato dal design",
-            description: "Priorità all’esperienza dell’utente finale.",
+            title: "Pensiero orientato al design",
+            description:
+              "Diamo priorità all’esperienza dell’utente finale in ogni soluzione SAP che sviluppiamo. Concentrandoci su flussi di lavoro intuitivi, riduciamo i tempi di formazione e aumentiamo l’adozione da parte degli utenti in tutta l’azienda.",
           },
           {
             icon: "terminal",
-            title: "Maestria tecnica",
-            description: "Profonda competenza in ABAP, Fiori, UI5.",
+            title: "Padronanza tecnica",
+            description:
+              "Il nostro team possiede una profonda esperienza in ABAP, Fiori, UI5 e SAP Cloud Platform. Non ci limitiamo a progettare interfacce accattivanti; realizziamo architetture robuste e scalabili.",
           },
         ],
       },
@@ -1507,6 +1526,7 @@ export const ui = {
       about: "Sobre",
       services: "Serviços",
       contact: "Contato",
+      btn: "Começar",
     },
     footer: {
       description:
@@ -1547,6 +1567,8 @@ export const ui = {
         subtitle:
           "Desenvolvimento Fiori especializado e consultoria estratégica conectando backends complexos a belas experiências de usuário.",
         cta: "Iniciar transformação",
+        btnOne: "Inicie sua transformação",
+        btnTwo: "Ver casos de sucesso",
       },
       about: {
         subTitle: "Sobre nós",
@@ -1554,13 +1576,15 @@ export const ui = {
         features: [
           {
             icon: "psychology",
-            title: "Pensamento guiado por design",
-            description: "Priorizando a experiência do usuário final.",
+            title: "Pensamento orientado ao design",
+            description:
+              "Priorizamos a experiência do utilizador final em каждой solução SAP que desenvolvemos. Ao focar em fluxos de trabalho intuitivos, reduzimos o tempo de formação e aumentamos a adoção pelos utilizadores em toda a empresa.",
           },
           {
             icon: "terminal",
             title: "Domínio técnico",
-            description: "Profunda expertise em ABAP, Fiori, UI5.",
+            description:
+              "A nossa equipa possui vasta experiência em ABAP, Fiori, UI5 e SAP Cloud Platform. Não nos limitamos a criar interfaces bonitas; desenvolvemos arquiteturas robustas e escaláveis.",
           },
         ],
       },

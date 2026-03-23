@@ -1,18 +1,16 @@
 ---
-const features = [
-  {
-    icon: "psychology",
-    title: "Design-Led Thinking",
-    description:
-      "We prioritize the end-user experience in every SAP solution we build. By focusing on intuitive workflows, we reduce training time and increase user adoption across the enterprise.",
-  },
-  {
-    icon: "terminal",
-    title: "Technical Mastery",
-    description:
-      "Our team possesses deep expertise in ABAP, Fiori, UI5, and SAP Cloud Platform. We don't just design pretty screens; we engineer robust, scalable architectures.",
-  },
-];
+interface Featuress {
+  title: string;
+  icon: string;
+  description: string;
+}
+interface Props {
+  subTitle?: string;
+  title?: string;
+  features?: readonly Featuress[];
+}
+
+const { subTitle, title, features = [] } = Astro.props;
 
 // URL de imagen de respaldo (la original de google no funcionaba)
 const imageSrc =
@@ -25,10 +23,10 @@ const imageSrc =
   >
     <div class="flex flex-col gap-4 text-center items-center">
       <h2 class="text-primary text-sm font-bold uppercase tracking-widest">
-        About Us
+        {title}
       </h2>
       <h1 class="text-white text-3xl md:text-4xl font-bold max-w-[720px]">
-        Bridging the Gap Between Logic and Experience
+        {subTitle}
       </h1>
     </div>
 
